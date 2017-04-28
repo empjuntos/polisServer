@@ -28,7 +28,3 @@ services:
     networks:
       - default
       - polisserver_default
-
-networks:
-  polisserver_default:
-    external: true

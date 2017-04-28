@@ -1428,7 +1428,7 @@ helpersInitialized.then(function(o) {
   app.get(/^\/embed$/, makeFileFetcher("polis-client-admin", portForAdminFiles, "/embed.html", {
     'Content-Type': "text/html",
   }));
-  app.get(/^\/embedPreprod$/, makeFileFetcher(hostname, portForAdminFiles, "/embedPreprod.html", {
+  app.get(/^\/embedPreprod$/, makeFileFetcher("polis-client-admin", portForAdminFiles, "/embedPreprod.html", {
     'Content-Type': "text/html",
   }));
   app.get(/^\/canvas_setup_backup_instructions$/, makeFileFetcher(hostname, portForParticipationFiles, "/canvas_setup_backup_instructions.html", {

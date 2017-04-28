@@ -409,7 +409,7 @@ CREATE TABLE xids (
     created BIGINT DEFAULT now_as_millis(),
     modified BIGINT NOT NULL DEFAULT now_as_millis(),
     UNIQUE (owner, uid),
-    UNIQUE (owner, xid),
+    UNIQUE (owner, xid)
 );
 CREATE INDEX xids_owner_idx ON xids USING btree (owner);
 
@@ -841,10 +841,10 @@ CREATE INDEX votes_latest_unique_zid_tid_idx ON votes USING btree (zid, tid);
 
 CREATE RULE on_vote_insert_update_unique_table AS
     ON INSERT TO votes
-    DO ALSO
+    DO ALSO (
         INSERT INTO votes_latest_unique (zid, pid, tid, vote, weight_x_32767, modified)
         values (NEW.zid, NEW.pid, NEW.tid, NEW.vote, NEW.weight_x_32767, NEW.created)
-            ON CONFLICT (zid, pid, tid) DO UPDATE SET vote = excluded.vote, modified = NEW.created;
+            ON CONFLICT (zid, pid, tid) DO UPDATE SET vote = excluded.vote, modified = NEW.created);
 
 
 CREATE TABLE crowd_mod (

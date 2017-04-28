@@ -2,6 +2,8 @@
 
 "use strict";
 
+ var oi = {"user-vote-counts":{"0":17,"1":10,"2":13,"3":1,"4":2,"5":2,"6":13,"7":2,"8":3,"9":17,"10":3,"11":17,"12":3,"13":6,"14":7,"15":4,"16":17,"17":1,"18":10,"19":10,"20":1,"21":10,"22":10,"23":10,"24":10,"25":8,"26":10,"27":10,"28":10,"29":10,"30":10,"31":4,"32":10,"33":3,"34":10,"35":10,"36":10,"37":10,"38":10,"39":17,"40":10,"41":10,"42":10,"43":10,"44":17,"45":7,"46":10,"47":17,"48":11,"49":13,"50":4,"51":13,"52":17,"53":17,"54":13,"55":13,"56":13,"57":13,"58":13,"59":16,"60":11,"61":17,"62":16,"63":16,"64":3,"65":17,"66":8,"67":1,"68":17,"69":17,"70":17,"71":17,"72":17,"73":17,"74":17,"75":17,"76":17,"77":10,"78":13,"79":17,"80":1},"pca":{"center":[0.7037037037037037,0.5061728395061729,-0.5555555555555556,-0.1111111111111111,-0.4567901234567901,-0.35802469135802467,-0.6296296296296295,-0.43209876543209874,-0.1728395061728395,-0.24691358024691357,-0.345679012345679,-0.09876543209876543,-0.14814814814814814,-0.19753086419753085,-0.07407407407407407,0.012345679012345678,-0.2345679012345679],"comps":[[-0.04277579878870356,-0.36067558700257335,0.15097019511951315,-0.5903346012501419,-0.14703858983740634,-0.1971926461114852,-0.13726997228642598,-0.3763381696670797,-0.22851488229223418,-0.3621882721279821,-0.04587174988346374,0.1528254309943168,-0.014216253927672924,-0.012678977613479508,0.17225900120954282,-0.19213215614490514,-0.0027654918781695567],[-0.0439817504979272,-0.19146695904404304,0.11981408338795885,-0.030041735350009542,0.19465128470756554,0.4379492993333971,0.14446086616836085,0.255162357330083,0.13135894183719754,-0.17372550385180305,0.3024890981681295,0.3861710154499367,0.45171503870191915,0.22628241126015977,0.26006400798879925,-0.05661783247567649,0.12778929487780116]]},"group-clusters":[{"id":0,"members":[4,7,12,13,14,16,17,26,27,29,43,54,59,60,63,66,68,70],"center":[-0.5596718197363258,-1.1876588059268882]},{"id":1,"members":[6,9,24,32,34,37,38,39,40,41,42,44,47,51,57,58],"center":[1.5498039074044445,-0.33028561860877126]},{"id":2,"members":[21,23,25,28,31,33,35,46,49,50,55,62,64,65,67,69],"center":[-0.731530518282689,0.5321076515856984]}],"n":81,"consensus":{"agree":[{"tid":6,"n-success":55,"n-trials":64,"p-success":0.8484848484848485,"p-test":5.829632525692796},{"tid":16,"n-success":21,"n-trials":24,"p-success":0.8461538461538461,"p-test":3.8},{"tid":2,"n-success":52,"n-trials":70,"p-success":0.736111111111111,"p-test":4.153735803678487},{"tid":10,"n-success":30,"n-trials":38,"p-success":0.775,"p-test":3.682947537517005},{"tid":7,"n-success":45,"n-trials":61,"p-success":0.7301587301587302,"p-test":3.810003810005715}],"disagree":[{"tid":0,"n-success":60,"n-trials":75,"p-success":0.7922077922077922,"p-test":5.27656187902292},{"tid":1,"n-success":51,"n-trials":68,"p-success":0.7428571428571429,"p-test":4.213504858001922}]},"n-cmts":17,"repness":{"0":[{"tid":11,"n-agree":13,"p-test":3,"repness-test":3.671175,"n-success":13,"repful-for":"agree","n-trials":15,"repness":3.156862745098039,"best-agree":true,"p-success":0.823529411764706},{"tid":12,"n-success":14,"n-trials":16,"p-success":0.8333333333333333,"p-test":3.1529631254723283,"repness":2.395833333333333,"repness-test":3.2656853,"repful-for":"agree"},{"tid":14,"n-success":11,"n-trials":13,"p-success":0.8,"p-test":2.6726124191242433,"repness":2.56,"repness-test":2.8619823,"repful-for":"agree"},{"tid":2,"n-success":20,"n-trials":22,"p-success":0.875,"p-test":3.9617738670844207,"repness":1.298387096774194,"repness-test":2.0616295,"repful-for":"agree"},{"tid":1,"n-success":21,"n-trials":22,"p-success":0.9166666666666667,"p-test":4.37880269519857,"repness":1.454022988505747,"repness-test":2.8117535,"repful-for":"disagree"}],"1":[{"tid":3,"n-agree":20,"p-test":4.264014327112208,"repness-test":5.4646974,"n-success":20,"repful-for":"agree","n-trials":21,"repness":3.818181818181818,"best-agree":true,"p-success":0.9130434782608696},{"tid":7,"n-success":21,"n-trials":21,"p-success":0.9565217391304348,"p-test":4.69041575982343,"repness":1.60695652173913,"repness-test":3.3923507,"repful-for":"agree"},{"tid":9,"n-success":17,"n-trials":20,"p-success":0.8181818181818182,"p-test":3.273268353539885,"repness":1.909090909090909,"repness-test":3.1576126,"repful-for":"agree"},{"tid":5,"n-success":18,"n-trials":21,"p-success":0.8260869565217391,"p-test":3.411211461689767,"repness":1.727272727272727,"repness-test":2.9560728,"repful-for":"agree"},{"tid":4,"n-success":18,"n-trials":21,"p-success":0.8260869565217391,"p-test":3.411211461689767,"repness":1.614624505928854,"repness-test":2.6910875,"repful-for":"agree"}],"2":[{"tid":16,"n-agree":8,"p-test":3,"repness-test":1.339924,"n-success":8,"repful-for":"agree","n-trials":8,"repness":1.157142857142857,"best-agree":true,"p-success":0.9}]},"votes-base":{"0":{"A":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],"D":[0,1,3,1,2,1,0,1,1,1,1,3,1,0,1,0,1,1,0,0,1,1,1,0,1,1,3,2,1,2,1,1,1,1,1,1,1,1,0,1,2,2,1,0,1,1,2,2,2,2],"S":[1,1,3,1,2,1,1,1,1,3,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,2,1,2,1,1,1,1,1,1,1,2,2,1,2,3,1,1,1,1,2,2,2,2]},"1":{"A":[0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,2,0,0,0,1,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0],"D":[1,0,3,0,2,1,1,1,1,3,1,3,1,1,1,1,0,1,1,1,0,1,0,0,1,0,3,0,0,1,1,0,1,1,1,1,1,1,0,1,2,1,1,0,0,1,2,1,1,2],"S":[1,1,3,1,2,1,1,1,1,3,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,2,0,2,1,1,2,1,1,1,1,1,2,1,2,2,1,1,1,1,2,1,1,2]},"2":{"A":[1,0,2,0,2,1,1,1,1,3,1,2,1,1,1,0,1,1,1,0,1,1,1,1,0,1,2,2,0,2,1,0,2,1,1,1,1,0,0,1,1,1,1,1,0,1,1,1,1,2],"D":[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0],"S":[1,0,2,0,2,1,1,1,1,3,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,2,0,2,1,1,2,1,1,1,1,2,2,1,2,3,1,1,1,1,2,2,1,2]},"3":{"A":[0,0,0,0,0,1,0,0,1,0,0,3,0,1,0,0,0,0,1,1,0,0,1,1,1,1,2,2,0,2,0,1,0,0,1,2,1,2,2,0,2,1,0,0,0,0,0,0,0,0],"D":[1,0,0,0,2,0,1,1,0,2,1,0,1,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,1,2,0,2],"S":[1,0,0,0,2,1,1,1,1,3,1,3,1,1,1,1,1,1,1,1,0,1,1,1,1,1,3,2,1,2,1,1,2,1,1,2,1,2,2,1,2,3,1,1,1,1,2,2,1,2]},"4":{"A":[0,0,0,0,0,1,1,1,1,1,1,3,1,1,0,1,0,1,0,0,0,0,1,1,0,1,2,2,1,2,0,1,0,1,1,1,1,2,2,1,1,1,1,0,0,1,0,1,0,1],"D":[0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"S":[1,0,0,0,2,1,1,1,1,3,1,3,1,1,1,1,1,1,1,1,0,1,1,1,1,1,3,2,1,2,1,1,2,1,1,1,1,2,2,1,2,2,1,1,1,1,2,1,1,2]},"5":{"A":[1,0,0,0,2,0,1,1,1,0,0,3,0,1,1,1,1,0,1,0,0,0,0,1,1,1,2,2,1,2,0,0,0,0,1,1,0,2,2,1,1,0,1,0,1,1,2,0,0,2],"D":[0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,1,0,0,0,1,2,0,1,0,0,0,0,0,0],"S":[1,0,0,0,2,1,1,1,1,3,1,3,1,1,1,1,1,1,1,1,0,1,1,1,1,1,3,2,1,2,1,1,2,1,1,2,1,2,2,1,2,3,1,1,1,1,2,2,1,2]},"6":{"A":[1,0,0,0,2,1,1,1,0,3,0,2,0,1,1,1,1,1,1,1,0,0,1,1,0,1,3,2,0,2,1,1,2,1,1,2,1,2,2,0,2,2,1,1,0,1,1,1,1,2],"D":[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0],"S":[1,0,0,0,2,1,1,1,1,3,0,3,0,1,1,1,1,1,1,1,0,1,1,1,1,1,3,2,1,2,1,1,2,1,1,2,1,2,2,1,2,3,1,1,1,1,2,1,1,2]},"7":{"A":[1,0,0,0,2,1,0,1,1,2,0,3,0,0,1,0,1,0,1,1,0,0,1,1,1,1,3,2,1,2,1,1,1,0,1,1,0,2,2,1,2,1,0,0,0,0,0,2,1,2],"D":[0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,1,0,0,0],"S":[1,0,0,0,2,1,1,1,1,3,0,3,1,1,1,1,1,1,1,1,0,1,1,1,1,1,3,2,1,2,1,1,1,1,1,1,1,2,2,1,2,3,0,1,1,1,2,2,1,2]},"8":{"A":[0,0,0,0,1,0,0,1,1,0,0,1,0,0,0,0,1,1,1,0,0,0,0,1,1,1,0,0,0,1,1,0,0,1,1,0,0,2,2,0,0,1,0,0,0,1,0,1,0,0],"D":[0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,2,0,0,0,0,0,1,0,0,0],"S":[1,0,0,0,2,1,1,1,1,3,0,3,1,1,1,1,1,1,1,1,0,1,1,1,1,1,3,2,1,2,1,1,2,1,1,1,1,2,2,1,2,3,0,1,1,1,2,1,1,2]},"9":{"A":[1,0,0,0,0,0,0,1,0,3,0,2,0,1,0,0,0,1,1,0,0,0,1,1,1,1,3,2,0,2,1,0,2,1,0,1,1,1,2,0,1,1,0,0,0,0,1,0,1,0],"D":[0,0,0,0,0,1,1,0,1,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0,1,1,0,0,0,0,1,0,1,0,2],"S":[1,0,0,0,2,1,1,1,1,3,0,3,0,1,1,1,1,1,1,1,0,1,1,1,1,1,3,2,0,2,1,1,2,1,1,2,1,1,2,1,2,3,0,1,1,1,2,2,1,2]},"10":{"A":[0,0,0,0,2,1,1,1,1,1,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,1,2,0,0,1,0,1,0,0,1,0,2,2,1,1,1,0,0,0,1,1,2,1,1],"D":[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"S":[0,0,0,0,2,1,1,1,1,2,0,0,0,1,0,0,1,0,1,1,0,0,0,1,0,0,1,2,0,1,1,0,2,0,1,1,0,2,2,1,1,2,0,0,1,1,1,2,1,1]},"11":{"A":[0,0,0,0,2,1,1,1,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,2,1,1,0,0,0,0,1,1,2,0,0],"D":[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,2,0,0,1,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0],"S":[0,0,0,0,2,1,1,1,1,2,0,0,0,1,0,0,1,0,1,1,0,0,0,1,0,0,1,2,0,1,1,0,2,0,1,1,0,1,2,1,1,2,0,0,1,1,1,2,1,1]},"12":{"A":[0,0,0,0,2,1,0,1,1,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,2,0,2,2,1,1,0,0,0,0,1,0,1,0,1],"D":[0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0],"S":[0,0,0,0,2,1,1,1,1,2,0,0,0,1,0,0,1,0,1,1,0,0,0,1,0,0,1,2,0,1,1,0,2,0,1,2,0,2,2,1,1,1,0,0,1,1,1,2,1,1]},"13":{"A":[0,0,0,0,2,1,1,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,1,0,0,2,1,0,1,0,0,0,1,1,1,0,0],"D":[0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0],"S":[0,0,0,0,2,1,1,1,1,2,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,2,0,0,2,1,1,2,0,0,1,1,1,1,0,0]},"14":{"A":[0,0,0,0,2,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,1,1,1,0,0,0,1,1,1,0,0],"D":[0,0,0,0,0,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0],"S":[0,0,0,0,2,1,1,1,1,2,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,2,0,1,2,1,1,2,0,0,1,1,1,1,0,0]},"15":{"A":[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,0,0,0,0,2,0,0,0,0,0,1,0,0,1,0,0],"D":[0,0,0,0,0,1,1,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,0,0,0],"S":[0,0,0,0,2,1,1,1,1,2,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,1,0,0,2,1,1,1,0,0,1,1,1,1,0,0]},"16":{"A":[0,0,0,0,2,1,1,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,0,2,0,0,2,0,1,2,0,0,1,0,1,1,0,0],"D":[0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"S":[0,0,0,0,2,1,1,1,1,2,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,2,0,0,2,0,1,2,0,0,1,0,1,1,0,0]}},"base-clusters":{"id":[4,6,7,9,12,13,14,16,17,21,23,24,25,26,27,28,29,31,32,33,34,35,37,38,39,40,41,42,43,44,46,47,49,50,51,54,55,57,58,59,60,62,63,64,65,66,67,68,69,70],"members":[[22],[5],[7,8,12],[4],[75,76],[47],[69],[9],[74],[21,53,72],[13],[24,34,41],[25],[0],[29],[28],[54],[32],[56],[55],[10],[37],[40],[44],[36],[42],[26,43,49],[2,39],[45],[11,46],[52],[19],[71,48],[1],[57],[16,66],[18],[51,60],[61,79],[63],[35,65],[38,68,78],[14],[23],[70],[62],[27,73],[59,77],[3,6],[30,58]],"x":[-0.4091213694500346,0.495309845035362,-0.5946675184766872,1.5468508437639101,-0.8449307554761863,-0.38299347866898575,-2.3191017118231474,-0.07459158984683954,0.24059916806846132,-0.6649154685224861,-1.854488904064247,1.2796967058068107,-2.1618075731236712,0.16430224168118482,-1.6010805151418888,-2.1885809301632198,0.41759091605834253,-1.4708177572342227,1.1433101785727402,0.7284288440931904,1.1032735594659338,-2.236097427273546,1.9496440862736106,2.3395550957254874,1.4081828777290541,2.504698794890091,0.9663149206974203,2.204528986707688,0.33660522050168334,1.5634501132436562,0.248190824383706,1.3988547280112549,-0.1269642977308894,-0.723025062497931,0.67879539903494,0.5956820300088355,-0.5273073644021665,1.8408285725369278,2.3355840723575225,-1.929244062490733,-0.04037483438408639,-0.20667060841816698,-0.10311842734237127,-1.415994118851556,0.224603846840081,-1.9510002788957224,-1.309186581196292,-0.8145389863438587,0.01937684523402764,-1.1941569791187219],"y":[-0.5050379631789089,0.24456103962626732,-0.3597929615837699,0.8027783534453325,-2.1209827880061667,-1.9822651680891967,-1.342917492425403,-1.4884992665230037,-0.9811269910272005,0.956288992992407,0.4962153362076643,-0.703501653569526,0.35709952006126655,-0.9749429365636108,-0.7616096142391483,-0.16163611067988803,-1.6531684400054478,0.819965591170434,-1.5888074756234263,1.3130946313665104,0.5287037510165965,0.6368716887792069,0.33246265582762147,0.7308898135424169,0.03382976023392703,-0.4098244752005844,-0.40037375953800175,0.6310232810676302,-0.6771269789937849,-0.8642229666420078,0.6775305010174212,0.1918788710453076,0.3251127416362187,-0.08374144466847659,-0.6839942824256066,-1.3388185122766054,1.2408470643385046,-0.9634585641143938,-1.2021950596991178,-2.022592800002759,-0.6112580581240119,0.8447309492129308,-0.942146583985075,0.9928171252464301,0.48879617162546707,-2.0651792255482446,-0.23733514139766987,-1.145421566641174,-0.058999557543293515,-1.3912579763716002],"count":[1,1,3,1,2,1,1,1,1,3,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,2,1,2,1,1,2,1,1,2,1,2,2,1,2,3,1,1,1,1,2,2,2,2]},"mod-out":[],"group-votes":{"0":{"n-members":25,"votes":{"0":{"A":0,"D":21,"S":24},"1":{"A":0,"D":21,"S":22},"2":{"A":20,"D":1,"S":22},"3":{"A":7,"D":12,"S":22},"4":{"A":13,"D":1,"S":20},"5":{"A":17,"D":1,"S":22},"6":{"A":18,"D":2,"S":21},"7":{"A":17,"D":3,"S":20},"8":{"A":6,"D":4,"S":19},"9":{"A":5,"D":11,"S":20},"10":{"A":14,"D":0,"S":15},"11":{"A":13,"D":1,"S":15},"12":{"A":14,"D":1,"S":16},"13":{"A":10,"D":2,"S":13},"14":{"A":11,"D":2,"S":13},"15":{"A":2,"D":6,"S":12},"16":{"A":9,"D":1,"S":11}},"id":0},"1":{"n-members":24,"votes":{"0":{"A":1,"D":19,"S":24},"1":{"A":10,"D":11,"S":23},"2":{"A":14,"D":5,"S":22},"3":{"A":20,"D":0,"S":21},"4":{"A":18,"D":0,"S":21},"5":{"A":18,"D":0,"S":21},"6":{"A":19,"D":1,"S":21},"7":{"A":21,"D":0,"S":21},"8":{"A":11,"D":0,"S":21},"9":{"A":17,"D":2,"S":20},"10":{"A":9,"D":1,"S":11},"11":{"A":3,"D":5,"S":10},"12":{"A":7,"D":3,"S":11},"13":{"A":5,"D":0,"S":5},"14":{"A":1,"D":4,"S":6},"15":{"A":4,"D":0,"S":5},"16":{"A":4,"D":1,"S":5}},"id":1},"2":{"n-members":23,"votes":{"0":{"A":2,"D":16,"S":22},"1":{"A":0,"D":17,"S":21},"2":{"A":16,"D":1,"S":22},"3":{"A":3,"D":10,"S":22},"4":{"A":8,"D":1,"S":21},"5":{"A":4,"D":9,"S":22},"6":{"A":16,"D":1,"S":20},"7":{"A":7,"D":7,"S":20},"8":{"A":4,"D":4,"S":21},"9":{"A":12,"D":2,"S":20},"10":{"A":6,"D":1,"S":11},"11":{"A":2,"D":3,"S":11},"12":{"A":0,"D":6,"S":10},"13":{"A":5,"D":2,"S":8},"14":{"A":3,"D":3,"S":8},"15":{"A":3,"D":4,"S":7},"16":{"A":8,"D":0,"S":8}},"id":2}},"proj":[[0.16430224168118482,-0.9749429365636108],[-0.723025062497931,-0.08374144466847659],[2.143130418869582,0.642740314533499],[-0.052257521963257114,-0.05373078604518992],[1.5468508437639101,0.8027783534453325],[0.495309845035362,0.24456103962626732],[0.0910112124313124,-0.06426832904139712],[-0.5562311536931861,-0.31365627419279785],[-0.6138857008684379,-0.3828613052792559],[-0.07459158984683954,-1.4884992665230037],[1.1032735594659338,0.5287037510165965],[1.5627282933112432,-0.8193367141167263],[-0.6138857008684379,-0.3828613052792559],[-1.854488904064247,0.4962153362076643],[-0.10311842734237127,-0.942146583985075],[-0.10992492666049697,0.027027321979212857],[0.5208362441184041,-1.3519139166497545],[-0.052257521963257114,-0.05373078604518992],[-0.5273073644021665,1.2408470643385046],[1.3988547280112549,0.1918788710453076],[-0.052257521963257114,-0.05373078604518992],[-0.6990693659359956,1.0438838615956125],[-0.4091213694500346,-0.5050379631789089],[-1.415994118851556,0.9928171252464301],[1.266224979123243,-0.7378381132533027],[-2.1618075731236712,0.35709952006126655],[1.074510113418118,-0.48404388856503344],[-1.40995195352176,-0.11163010633510971],[-2.1885809301632198,-0.16163611067988803],[-1.6010805151418888,-0.7616096142391483],[-1.2176507837316386,-1.2691980636156868],[-1.4708177572342227,0.819965591170434],[1.8682610598433562,0.34398464122092814],[1.1876713518194737,-0.6519115535244734],[0.028932749275527175,-0.6095750195533471],[1.4081828777290541,0.03382976023392703],[-2.236097427273546,0.6368716887792069],[-0.3713213086899927,0.8055431081587329],[2.265927554545794,0.6193062476017613],[1.9496440862736106,0.33246265582762147],[1.3851937864777157,-0.7207552939308022],[2.504698794890091,-0.4098244752005844],[0.890204932309206,-0.4645708396833788],[2.3395550957254874,0.7308898135424169],[0.33660522050168334,-0.6771269789937849],[1.5641719331760695,-0.9091092191672894],[-0.38299347866898575,-1.9822651680891967],[0.9342297163649369,-0.25250655036559305],[1.784705397492762,-0.8414752431928628],[0.248190824383706,0.6775305010174212],[-0.5663815021708789,0.9584427092875153],[0.41759091605834253,-1.6531684400054478],[0.7284288440931904,1.3130946313665104],[1.1433101785727402,-1.5888074756234263],[0.67879539903494,-0.6839942824256066],[-1.1706631745058051,-1.5133178891275136],[-1.0116377651200457,-1.0918270356514377],[1.8969517475810935,-1.0854418850359249],[2.410970076612957,-1.0240289686532618],[-1.9510002788957224,-2.0651792255482446],[-1.929244062490733,-2.022592800002759],[-0.6138857008684379,-0.3828613052792559],[-0.10968241804369996,-0.6129410966946766],[-0.10275268343314423,0.8578730200744865],[-2.3191017118231474,-1.342917492425403],[0.224603846840081,0.48879617162546707],[-0.11618103213906444,0.22135550557670067],[-0.729295537460584,0.8665404080940932],[-1.208421208870824,-0.36304017646023],[0.24059916806846132,-0.9811269910272005],[-0.9591881966223034,-2.0553033170875676],[-0.7306733143300693,-2.1866622589247657],[-0.6174402075676717,-1.1990160976309103],[-0.14593783313136402,0.8707767194055731],[-0.13774756332271437,0.4288699776957368],[0.21377288187832855,0.40900835104942185],[0.050748885702970745,0.3969726766679349],[0.6705278158992668,-1.3257231079034564],[2.2601980681020883,-1.380361150744974],[0.7793431701234984,-0.44799574158391187],[0.04993139557485705,-1.586547510989022]],"lastModTimestamp":null,"in-conv":[0,65,70,62,74,7,59,72,58,60,27,1,69,24,55,39,46,4,77,54,48,75,21,32,40,56,13,22,36,41,43,61,29,44,6,28,51,25,34,3,12,2,66,23,47,35,76,19,57,68,11,9,5,14,45,53,78,26,16,79,38,30,73,10,18,52,71,42,37,63,8,49],"tids":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],"lastVoteTimestamp":1495669756592,"math_tick":68}
+
 const akismetLib = require('akismet');
 const AWS = require('aws-sdk');
 AWS.config.set('region', 'us-east-1');
@@ -21,7 +23,7 @@ const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const Intercom = require('intercom.io'); // https://github.com/tarunc/intercom.io
 const IntercomOfficial = require('intercom-client');
-const intercomClient = new IntercomOfficial.Client(process.env.INTERCOM_APP_ID, process.env.INTERCOM_ACCESS_TOKEN).usePromises();
+const intercomClient =  null;//new IntercomOfficial.Client(process.env.INTERCOM_APP_ID, process.env.INTERCOM_ACCESS_TOKEN).usePromises();
 const OAuth = require('oauth');
 // const Pushover = require('pushover-notifications');
 // const pushoverInstance = new Pushover({
@@ -32,7 +34,10 @@ const Mailgun = require('mailgun').Mailgun;
 const mailgun = new Mailgun(process.env.MAILGUN_API_KEY);
 // const postmark = require("postmark")(process.env.POSTMARK_API_KEY);
 const querystring = require('querystring');
-const devMode = "localhost" === process.env.STATIC_FILES_HOST;
+//const devMode = "localhost" === process.env.STATIC_FILES_HOST;
+console.log("====================================")
+console.log(process.env.STATIC_FILES_HOST);
+const devMode = true;
 const replaceStream = require('replacestream');
 const responseTime = require('response-time');
 const request = require('request-promise'); // includes Request, but adds promise methods
@@ -162,7 +167,7 @@ setInterval(function() {
 const POLIS_FROM_ADDRESS = process.env.POLIS_FROM_ADDRESS;
 
 const akismet = akismetLib.client({
-  blog: 'https://pol.is', // required: your root level url
+  blog: 'http://localhost:5000', // required: your root level url
   apiKey: process.env.AKISMET_ANTISPAM_API_KEY,
 });
 
@@ -731,6 +736,7 @@ const prodPoolSize = usingReplica ? 3 : 12; /// 39
 const pgPoolLevelRanks = ["info", "verbose"];
 const pgPoolLoggingLevel = -1; // -1 to get anything more important than info and verbose. // pgPoolLevelRanks.indexOf("info");
 
+console.log(process.env.DATABASE_URL);
 const queryReadWriteObj = {
   isReadOnly: false,
   pgConfig: Object.assign(parsePgConnectionString(process.env.DATABASE_URL), {
@@ -1971,7 +1977,7 @@ function initializePolisHelpers() {
       /www.pol.is/.test(req.headers.host)
     ) {
       res.writeHead(302, {
-        Location: "https://pol.is" + req.url,
+        Location: "http://localhost:5000" + req.url,
       });
       return res.end();
     }
@@ -1982,12 +1988,12 @@ function initializePolisHelpers() {
     if (/api.pol.is/.test(req.headers.host)) {
       if (req.url === "/" || req.url === "") {
         res.writeHead(302, {
-          Location: "https://pol.is/docs/api",
+          Location: "http://localhost:5000/docs/api",
         });
         return res.end();
       } else if (!req.url.match(/^\/?api/)) {
         res.writeHead(302, {
-          Location: "https://pol.is/" + req.url,
+          Location: "http://localhost:5000/" + req.url,
         });
         return res.end();
       }
@@ -2298,6 +2304,7 @@ function initializePolisHelpers() {
 
 
   function hasWhitelistMatches(host) {
+  return true;
 
     let hostWithoutProtocol = host;
     if (host.startsWith("http://")) {
@@ -2353,7 +2360,7 @@ function initializePolisHelpers() {
     });
 
 
-    
+
 
     if (!domainOverride && !hasWhitelistMatches(host) && !routeIsWhitelistedForAnyDomain) {
       winston.log("info", 'not whitelisted');
@@ -2502,7 +2509,7 @@ function initializePolisHelpers() {
 
       let results = rows.map((row) => {
         let item = row.data;
-        
+
         if (row.math_tick) {
           item.math_tick = Number(row.math_tick);
         }
@@ -2577,8 +2584,8 @@ function initializePolisHelpers() {
     return o;
   }
 
-  function packGids(o) {  
-    
+  function packGids(o) {
+
     // TODO start index at 1
 
     function remapGid(g) {
@@ -2604,6 +2611,8 @@ function initializePolisHelpers() {
   }
 
   function processMathObject(o) {
+    return oi;
+    
 
     function remapSubgroupStuff(g) {
       if (_.isArray(g.val)) {
@@ -2705,10 +2714,12 @@ function initializePolisHelpers() {
   }
 
   function getPca(zid, math_tick) {
+    console.log("GETTING PCAaaaa");
     let cached = pcaCache.get(zid);
     if (cached && cached.expiration < Date.now()) {
       cached = null;
     }
+    cached = null;
     let cachedPOJO = cached && cached.asPOJO;
     if (cachedPOJO) {
       if (cachedPOJO.math_tick <= math_tick) {
@@ -2727,26 +2738,28 @@ function initializePolisHelpers() {
     // It's probably not difficult to cache, but keeping things simple for now, and only caching things that come down with the poll.
 
     let queryStart = Date.now();
-
+console.log("MATH ENV = ", process.env.MATH_ENV);
     return pgQueryP_readOnly("select * from math_main where zid = ($1) and math_env = ($2);", [zid, process.env.MATH_ENV]).then((rows) => {
+    console.log("ROOOOOOOOWS", rows);
 
       let queryEnd = Date.now();
       let queryDuration = queryEnd - queryStart;
       addInRamMetric("pcaGetQuery", queryDuration);
 
       if (!rows || !rows.length) {
-        INFO("mathpoll related", "after cache miss, unable to find item", zid, math_tick);
-        return null;
+        INFO("mathpoll related", "after cache miss, unable to find item :( cry", zid, math_tick);
+        //return null;
       }
-      let item = rows[0].data;
+      //let item = rows[0].data;
+      let item = oi;
 
-      if (rows[0].math_tick) {
-        item.math_tick = Number(rows[0].math_tick);
-      }
+     // if (rows[0].math_tick) {
+     //   item.math_tick = Number(rows[0].math_tick);
+     // }
 
       if (item.math_tick <= math_tick) {
         INFO("mathpoll related", "after cache miss, unable to find newer item", zid, math_tick);
-        return null;
+        //return null;
       }
       INFO("mathpoll related", "after cache miss, found item, adding to cache", zid, math_tick);
 
@@ -2763,6 +2776,7 @@ function initializePolisHelpers() {
   function updatePcaCache(zid, item) {
     return new Promise(function(resolve, reject) {
       delete item.zid; // don't leak zid
+      item = oi;
       let asJSON = JSON.stringify(item);
       let buf = new Buffer(asJSON, 'utf-8');
       zlib.gzip(buf, function(err, jsondGzipdPcaBuffer) {
@@ -2788,7 +2802,7 @@ function initializePolisHelpers() {
     if (req.body.zid && !req.body.conversation_id) {
       winston.log("info", "redirecting old zid user to about page");
       res.writeHead(302, {
-        Location: "https://pol.is/about",
+        Location: "http://localhost:5000/about",
       });
       return res.end();
     }
@@ -2842,7 +2856,11 @@ function initializePolisHelpers() {
       }
     }
 
+console.log("I WILL GET THIS PCA");
     getPca(zid, math_tick).then(function(data) {
+      console.log("LOOK MY DATA !!!!!!!!!!!!!!!!!!!");
+      console.log(data);
+      console.log("birl");
       if (data) {
         // The buffer is gzipped beforehand to cut down on server effort in re-gzipping the same json string for each response.
         // We can't cache this endpoint on Cloudflare because the response changes too freqently, so it seems like the best way
@@ -3257,7 +3275,7 @@ function initializePolisHelpers() {
 
 
   function getServerNameWithProtocol(req) {
-    let server = "https://pol.is";
+    let server = "http://localhost:5000";
     if (devMode) {
       // usually localhost:5000
       server = "http://" + req.headers.host;
@@ -5077,9 +5095,7 @@ Email verified! You can close this tab or hit the back button.
     return sendEmailByUid(uid, subject, body);
   }
 
-  let shouldSendNotifications = !devMode;
-  // let shouldSendNotifications = true;
-  // let shouldSendNotifications = false;
+  let shouldSendNotifications = false;
   if (shouldSendNotifications) {
     doNotificationLoop();
   }
@@ -5542,7 +5558,7 @@ Email verified! You can close this tab or hit the back button.
       '</head>' +
       "<body style='max-width:320px'>" +
       "<p>You are signed in as polis user " + o.email + "</p>" +
-      // "<p><a href='https://pol.is/user/logout'>Change pol.is users</a></p>" +
+      // "<p><a href='http://localhost:5000/user/logout'>Change pol.is users</a></p>" +
       // "<p><a href='https://preprod.pol.is/inbox/context="+ o.context_id +"'>inbox</a></p>" +
       // "<p><a href='https://preprod.pol.is/2demo' target='_blank'>2demo</a></p>" +
       // "<p><a href='https://preprod.pol.is/conversation/create/context="+ o.context_id +"'>create</a></p>" +
@@ -5735,7 +5751,7 @@ Email verified! You can close this tab or hit the back button.
 
         }
         console.log('isParentDomainWhitelisted', 8, ok);
-        return ok;
+        return true;
       });
   }
 
@@ -6839,7 +6855,7 @@ Email verified! You can close this tab or hit the back button.
     generateTokenP(30, false).then(function(code) {
       return pgQueryP("insert into coupons_for_free_upgrades (uid, code, plan) values ($1, $2, $3) returning *;", [uid, code, planCode]).then(function(rows) {
         var row = rows[0];
-        row.url = "https://pol.is/api/v3/changePlanWithCoupon?code=" + row.code;
+        row.url = "http://localhost:5000/api/v3/changePlanWithCoupon?code=" + row.code;
         res.status(200).json(row);
       }).catch(function(err) {
         fail(res, 500, "polis_err_creating_coupon", err);
@@ -7045,13 +7061,13 @@ Email verified! You can close this tab or hit the back button.
 
   function _getCommentsForModerationList(o) {
     var strictCheck = Promise.resolve(null);
-    
+
     if (o.modIn) {
       strictCheck = pgQueryP("select strict_moderation from conversations where zid = ($1);", [o.zid]).then((c) => {
         return o.strict_moderation;
       });
     }
-    
+
     return strictCheck.then((strict_moderation) => {
 
       let modClause = "";
@@ -7385,7 +7401,7 @@ Email verified! You can close this tab or hit the back button.
     });
   }
 
-  
+
   function getAgeRange(demo) {
     var currentYear = (new Date()).getUTCFullYear();
     var birthYear = demo.ms_birth_year_estimate_fb;
@@ -7422,7 +7438,7 @@ Email verified! You can close this tab or hit the back button.
   }
 
 
-  
+
 
   function getDemographicsForVotersOnComments(zid, comments) {
     function isAgree(v) {
@@ -7462,7 +7478,7 @@ Email verified! You can close this tab or hit the back button.
         };
       });
       var demoByPid = _.indexBy(demo, "pid");
-      
+
       votes = votes.map((v) => {
         return _.extend(v, demoByPid[v.pid]);
       });
@@ -7568,7 +7584,7 @@ Email verified! You can close this tab or hit the back button.
               fail(res, 500, "polis_err_get_comments3", err);
             });
           } else {
-            fail(res, 500, "polis_err_get_comments_permissions");            
+            fail(res, 500, "polis_err_get_comments_permissions");
           }
         }).catch((err) => {
           fail(res, 500, "polis_err_get_comments2", err);
@@ -7649,11 +7665,11 @@ Email verified! You can close this tab or hit the back button.
   }
 
   function createProdModerationUrl(zinvite) {
-    return "https://pol.is/m/" + zinvite;
+    return "http://localhost:5000/m/" + zinvite;
   }
 
   function createModerationUrl(req, zinvite) {
-    let server = devMode ? "http://localhost:5000" : "https://pol.is";
+    let server = devMode ? "http://localhost:5000" : "http://localhost:5000";
 
     if (req.headers.host.includes("preprod.pol.is")) {
       server = "https://preprod.pol.is";
@@ -7663,7 +7679,7 @@ Email verified! You can close this tab or hit the back button.
   }
 
   // function createMuteUrl(zid, tid) {
-  //     let server = devMode ? "http://localhost:5000" : "https://pol.is";
+  //     let server = devMode ? "http://localhost:5000" : "http://localhost:5000";
   //     let params = {
   //         zid: zid,
   //         tid: tid
@@ -7674,7 +7690,7 @@ Email verified! You can close this tab or hit the back button.
   // }
 
   // function createUnmuteUrl(zid, tid) {
-  //     let server = devMode ? "http://localhost:5000" : "https://pol.is";
+  //     let server = devMode ? "http://localhost:5000" : "http://localhost:5000";
   //     let params = {
   //         zid: zid,
   //         tid: tid
@@ -7963,7 +7979,7 @@ Email verified! You can close this tab or hit the back button.
       let isSpamPromise = isSpam({
         comment_content: txt,
         comment_author: uid,
-        permalink: 'https://pol.is/' + zid,
+        permalink: 'http://localhost:5000/' + zid,
         user_ip: ip,
         user_agent: req.headers['user-agent'],
         referrer: req.headers.referer,
@@ -8410,6 +8426,8 @@ Email verified! You can close this tab or hit the back button.
 
 
   function handle_GET_participationInit(req, res) {
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+    console.log("HANDLE_GETPARTICIPATIONINIT");
 
     // let qs = {
     //   conversation_id: req.p.conversation_id,
@@ -8517,6 +8535,8 @@ Email verified! You can close this tab or hit the back button.
         o.nextComment.currentPid = req.p.pid;
       }
 
+      console.log("querry doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeEEE");
+      //console.log(o);
       res.status(200).json(o);
 
     }, function(err) {
@@ -9758,11 +9778,13 @@ Email verified! You can close this tab or hit the back button.
   }
 
   function getOneConversation(zid, uid) {
+    console.log("query ============");
     return Promise.all([
       pgQueryP_readOnly("select * from conversations left join  (select uid, site_id, plan from users) as u on conversations.owner = u.uid where conversations.zid = ($1);", [zid]),
       getConversationHasMetadata(zid),
       (_.isUndefined(uid) ? Promise.resolve({}) : getUserInfoForUid2(uid)),
     ]).then(function(results) {
+      console.log(results);
       let conv = results[0] && results[0][0];
       let convHasMetadata = results[1];
       let requestingUserInfo = results[2];
@@ -9995,7 +10017,7 @@ Email verified! You can close this tab or hit the back button.
   function handle_POST_reports(req, res) {
     let zid = req.p.zid;
     let uid = req.p.uid;
-    
+
     return isModerator(zid, uid).then((isMod) => {
       if (!isMod) {
         return fail(res, 403, "polis_err_post_reports_permissions", err);
@@ -10047,7 +10069,7 @@ Email verified! You can close this tab or hit the back button.
 
       let query  = q.toString();
       query = query.replace("'now_as_millis()'", "now_as_millis()"); // remove quotes added by sql lib
-      
+
       return pgQueryP(query, []).then((result) => {
         res.json({});
       });
@@ -10146,7 +10168,7 @@ Email verified! You can close this tab or hit the back button.
     if (req.p.plan_id) {
       o.plan_id = req.p.plan_id;
     }
-    res.send("https://pol.is/settings/enterprise/" + encodeParams(o));
+    res.send("http://localhost:5000/settings/enterprise/" + encodeParams(o));
   }
 
 
@@ -10457,7 +10479,7 @@ Email verified! You can close this tab or hit the back button.
 
   function handle_POST_sendEmailExportReady(req, res) {
 
-    if (req.p.webserver_pass !== process.env.WEBSERVER_PASS || req.p.webserver_username !== process.env.WEBSERVER_USERNAME) {      
+    if (req.p.webserver_pass !== process.env.WEBSERVER_PASS || req.p.webserver_username !== process.env.WEBSERVER_USERNAME) {
       return fail(res, 403, "polis_err_sending_export_link_to_email_auth");
     }
 
@@ -11646,7 +11668,7 @@ Thanks for using pol.is!
       return Promise.resolve(cached);
     }
     let httpUrl = "https://cdn.api.twitter.com/1/urls/count.json?url=http://pol.is/" + conversation_id;
-    let httpsUrl = "https://cdn.api.twitter.com/1/urls/count.json?url=https://pol.is/" + conversation_id;
+    let httpsUrl = "https://cdn.api.twitter.com/1/urls/count.json?url=http://localhost:5000/" + conversation_id;
     return Promise.all([
       request.get(httpUrl),
       request.get(httpsUrl),
@@ -11674,7 +11696,7 @@ Thanks for using pol.is!
     if (cached) {
       return Promise.resolve(cached);
     }
-    let url = "http://graph.facebook.com/\?id\=https://pol.is/" + conversation_id;
+    let url = "http://graph.facebook.com/\?id\=http://localhost:5000/" + conversation_id;
     return request.get(url).then(function(result) {
       let shares = JSON.parse(result).shares;
       fbShareCountCache.set(conversation_id, shares);
@@ -11754,7 +11776,7 @@ Thanks for using pol.is!
           break;
         }
       }
-      
+
 
       meta = _.indexBy(meta, 'pid');
       let pidToMetaVotes = _.groupBy(metaVotes, 'pid');
@@ -12096,7 +12118,7 @@ Thanks for using pol.is!
         //         return stuff;
         //     }
         // }).then(function(stuff) {
-          
+
         let participantsWithSocialInfo = stuff[0] || [];
         // let facebookFriends = stuff[0] || [];
         // let twitterParticipants = stuff[1] || [];
@@ -12340,7 +12362,7 @@ CREATE TABLE slack_user_invites (
         slack_team,
         slack_user_id,
       ]).then((rows) => {
-        
+
         if (!rows || !rows.length) {
           // create new user (or use existing user) and associate a new slack_user entry
           const uidPromise = existing_uid_for_client ? Promise.resolve(existing_uid_for_client) : createDummyUser();
@@ -12633,7 +12655,7 @@ CREATE TABLE slack_user_invites (
     // TODO If we're doing this basic form, we can't just return json from the /login call
 
     let form1 = '' +
-      '<h2>create a new <img src="https://pol.is/polis-favicon_favicon.png" height="20px"> pol<span class="Logo--blue">.</span>is account</h2>' +
+      '<h2>create a new <img src="http://localhost:5000/polis-favicon_favicon.png" height="20px"> pol<span class="Logo--blue">.</span>is account</h2>' +
       '<p><form role="form" class="FormVertical" action="' + getServerNameWithProtocol(req) + '/api/v3/auth/new" method="POST">' +
       '<div class="FormVertical-group">' +
       '<label class="FormLabel" for="gatekeeperLoginEmail">Email</label>' +
@@ -12658,7 +12680,7 @@ CREATE TABLE slack_user_invites (
       '<input type="hidden" name="tool_consumer_instance_guid" value="' + tool_consumer_instance_guid + '">' +
       '<input type="hidden" name="afterJoinRedirectUrl" value="' + afterJoinRedirectUrl + '">' +
       '</div>' +
-      '<input type="checkbox" name="gatekeeperTosPrivacy" id="gatekeeperTosPrivacy" style="position: relative; top: -1px"> &nbsp; By signing up, you agree to our <a href="https://pol.is/tos"> terms of use</a> and <a href="https://pol.is/privacy"> privacy policy </a>' +
+      '<input type="checkbox" name="gatekeeperTosPrivacy" id="gatekeeperTosPrivacy" style="position: relative; top: -1px"> &nbsp; By signing up, you agree to our <a href="http://localhost:5000/tos"> terms of use</a> and <a href="http://localhost:5000/privacy"> privacy policy </a>' +
       '<div class="row" id="errorDiv"></div>' +
       '<div class="FormVertical-group">' +
       '<button type="submit" class="Btn Btn-primary">Create new pol.is account</button>' +
@@ -13254,7 +13276,7 @@ CREATE TABLE slack_user_invites (
     } else {
       path += "app_instructions_blank.png";
     }
-    let doFetch = makeFileFetcher(hostname, portForParticipationFiles, path, {
+    let doFetch = makeFileFetcher("polis-admin", portForParticipationFiles, path, {
       'Content-Type': "image/png",
     });
     doFetch(req, res);
@@ -13715,6 +13737,7 @@ CREATE TABLE slack_user_invites (
       if (host.match(re)) {
         // don't alert for this, it's probably DNS related
         // TODO_SEO what should we return?
+        console.log("WROOOOONG BUM!")
         userFail(res, 500, "polis_err_proxy_serving_to_domain", new Error(host));
       } else {
         fail(res, 500, "polis_err_proxy_serving_to_domain", new Error(host));
@@ -13749,6 +13772,8 @@ CREATE TABLE slack_user_invites (
   }
 
   function buildStaticHostname(req, res) {
+
+    return process.env.STATIC_FILES_HOST;
     if (devMode) {
       return process.env.STATIC_FILES_HOST;
     } else {
@@ -13781,9 +13806,14 @@ CREATE TABLE slack_user_invites (
 
 
   function makeFileFetcher(hostname, port, path, headers, preloadData) {
-
+    console.log("HOSTNAME ==> ", hostname);
+    console.log("PORT ==> ", port);
+    console.log("PATH ==> ", path);
+    console.log("===============\n\n");
+    if(!hostname) {
+      hostname = buildStaticHostname(req, res);
+    }
     return function(req, res) {
-      let hostname = buildStaticHostname(req, res);
       if (!hostname) {
         fail(res, 500, "polis_err_file_fetcher_serving_to_domain");
         console.error(req.headers.host);
@@ -13857,7 +13887,9 @@ CREATE TABLE slack_user_invites (
 
   // serve up index.html in response to anything starting with a number
   let hostname = process.env.STATIC_FILES_HOST;
+  //let hostname = "pol.is";
   let portForParticipationFiles = process.env.STATIC_FILES_PORT;
+  //let portForParticipationFiles = 80;
   let portForAdminFiles = process.env.STATIC_FILES_ADMINDASH_PORT;
 
 
@@ -13906,7 +13938,7 @@ CREATE TABLE slack_user_invites (
   }
 
 
-  let fetch404Page = makeFileFetcher(hostname, portForAdminFiles, "/404.html", {
+  let fetch404Page = makeFileFetcher("polis-admin", portForAdminFiles, "/404.html", {
     'Content-Type': "text/html",
   });
 
@@ -13945,10 +13977,10 @@ CREATE TABLE slack_user_invites (
   }
 
 
-  let fetchIndexForAdminPage = makeFileFetcher(hostname, portForAdminFiles, "/index_admin.html", {
+  let fetchIndexForAdminPage = makeFileFetcher("polis-admin", portForAdminFiles, "/index_admin.html", {
     'Content-Type': "text/html",
   });
-  let fetchIndexForReportPage = makeFileFetcher(hostname, portForAdminFiles, "/index_report.html", {
+  let fetchIndexForReportPage = makeFileFetcher("polis-admin", portForAdminFiles, "/index_report.html", {
     'Content-Type': "text/html",
   });
 
@@ -13959,7 +13991,7 @@ CREATE TABLE slack_user_invites (
     res.set({
       'Content-Type': 'text/html',
     });
-    res.send("<a href='https://pol.is/" + conversation_id + "' target='_blank'>" + conversation_id + "</a>");
+    res.send("<a href='http://localhost:5000/" + conversation_id + "' target='_blank'>" + conversation_id + "</a>");
   }
 
 
@@ -13971,8 +14003,8 @@ CREATE TABLE slack_user_invites (
         'Content-Type': 'text/html',
       });
       let title = info.topic || info.created;
-      res.send("<a href='https://pol.is/" + conversation_id + "' target='_blank'>" + title + "</a>" +
-        "<p><a href='https://pol.is/m" + conversation_id + "' target='_blank'>moderate</a></p>" +
+      res.send("<a href='http://localhost:5000/" + conversation_id + "' target='_blank'>" + title + "</a>" +
+        "<p><a href='http://localhost:5000/m" + conversation_id + "' target='_blank'>moderate</a></p>" +
         (info.description ? "<p>" + info.description + "</p>" : "")
       );
     }).catch(function(err) {
