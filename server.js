@@ -19,7 +19,7 @@ const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const Intercom = require('intercom.io'); // https://github.com/tarunc/intercom.io
 const IntercomOfficial = require('intercom-client');
-const intercomClient = new IntercomOfficial.Client(process.env.INTERCOM_APP_ID, process.env.INTERCOM_ACCESS_TOKEN).usePromises();
+const intercomClient =  null;//new IntercomOfficial.Client(process.env.INTERCOM_APP_ID, process.env.INTERCOM_ACCESS_TOKEN).usePromises();
 const OAuth = require('oauth');
 // const Pushover = require('pushover-notifications');
 // const pushoverInstance = new Pushover({
@@ -728,6 +728,7 @@ const prodPoolSize = usingReplica ? 3 : 12; /// 39
 const pgPoolLevelRanks = ["info", "verbose"];
 const pgPoolLoggingLevel = -1; // -1 to get anything more important than info and verbose. // pgPoolLevelRanks.indexOf("info");
 
+console.log(process.env.DATABASE_URL);
 const queryReadWriteObj = {
   isReadOnly: false,
   pgConfig: Object.assign(parsePgConnectionString(process.env.DATABASE_URL), {
