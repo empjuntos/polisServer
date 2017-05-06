@@ -30,7 +30,10 @@ const Mailgun = require('mailgun').Mailgun;
 const mailgun = new Mailgun(process.env.MAILGUN_API_KEY);
 const postmark = require("postmark")(process.env.POSTMARK_API_KEY);
 const querystring = require('querystring');
-const devMode = "localhost" === process.env.STATIC_FILES_HOST;
+//const devMode = "localhost" === process.env.STATIC_FILES_HOST;
+console.log("====================================")
+console.log(process.env.STATIC_FILES_HOST);
+const devMode = true;
 const replaceStream = require('replacestream');
 const responseTime = require('response-time');
 const request = require('request-promise'); // includes Request, but adds promise methods
@@ -160,7 +163,7 @@ setInterval(function() {
 const POLIS_FROM_ADDRESS = `Polis Team <${process.env.EMAIL_MIKE}>`;
 
 const akismet = akismetLib.client({
-  blog: 'https://pol.is', // required: your root level url
+  blog: 'http://localhost:5000', // required: your root level url
   apiKey: process.env.AKISMET_ANTISPAM_API_KEY,
 });
 
@@ -1816,7 +1819,7 @@ function initializePolisHelpers() {
       /www.pol.is/.test(req.headers.host)
     ) {
       res.writeHead(302, {
-        Location: "https://pol.is" + req.url,
+        Location: "http://localhost:5000" + req.url,
       });
       return res.end();
     }
@@ -1827,12 +1830,12 @@ function initializePolisHelpers() {
     if (/api.pol.is/.test(req.headers.host)) {
       if (req.url === "/" || req.url === "") {
         res.writeHead(302, {
-          Location: "https://pol.is/docs/api",
+          Location: "http://localhost:5000/docs/api",
         });
         return res.end();
       } else if (!req.url.match(/^\/?api/)) {
         res.writeHead(302, {
-          Location: "https://pol.is/" + req.url,
+          Location: "http://localhost:5000/" + req.url,
         });
         return res.end();
       }
@@ -2088,6 +2091,7 @@ function initializePolisHelpers() {
 
 
   function hasWhitelistMatches(host) {
+  return true;
 
     let hostWithoutProtocol = host;
     if (host.startsWith("http://")) {
@@ -2578,7 +2582,7 @@ function initializePolisHelpers() {
     if (req.body.zid && !req.body.conversation_id) {
       winston.log("info", "redirecting old zid user to about page");
       res.writeHead(302, {
-        Location: "https://pol.is/about",
+        Location: "http://localhost:5000/about",
       });
       return res.end();
     }
@@ -3058,7 +3062,7 @@ function initializePolisHelpers() {
 
 
   function getServerNameWithProtocol(req) {
-    let server = "https://pol.is";
+    let server = "http://localhost:5000";
     if (devMode) {
       // usually localhost:5000
       server = "http://" + req.headers.host;
@@ -4910,7 +4914,7 @@ Email verified! You can close this tab or hit the back button.
         let last_notified = row.last_notified; // only send an email if last_notified matches the one in the query above. This should prevent race conditions between multiple server instances.
         let url = row.parent_url;
         if (!url) {
-          url = "https://pol.is/" + row.zinvite;
+          url = "http://localhost:5000/" + row.zinvite;
         }
         // NOTE: setting the DB status first to prevent a race condition where there can be multiple emails sent (one from each server)
         pgQueryP("update participants set last_notified = now_as_millis() where uid = ($1) and zid = ($2) and last_notified = ($3);", [row.uid, row.zid, last_notified]).then(function() {
@@ -5396,7 +5400,7 @@ Email verified! You can close this tab or hit the back button.
       '</head>' +
       "<body style='max-width:320px'>" +
       "<p>You are signed in as polis user " + o.email + "</p>" +
-      // "<p><a href='https://pol.is/user/logout'>Change pol.is users</a></p>" +
+      // "<p><a href='http://localhost:5000/user/logout'>Change pol.is users</a></p>" +
       // "<p><a href='https://preprod.pol.is/inbox/context="+ o.context_id +"'>inbox</a></p>" +
       // "<p><a href='https://preprod.pol.is/2demo' target='_blank'>2demo</a></p>" +
       // "<p><a href='https://preprod.pol.is/conversation/create/context="+ o.context_id +"'>create</a></p>" +
@@ -5589,7 +5593,7 @@ Email verified! You can close this tab or hit the back button.
 
         }
         console.log('isParentDomainWhitelisted', 8, ok);
-        return ok;
+        return true;
       });
   }
 
@@ -6682,7 +6686,7 @@ Email verified! You can close this tab or hit the back button.
     generateTokenP(30, false).then(function(code) {
       return pgQueryP("insert into coupons_for_free_upgrades (uid, code, plan) values ($1, $2, $3) returning *;", [uid, code, planCode]).then(function(rows) {
         var row = rows[0];
-        row.url = "https://pol.is/api/v3/changePlanWithCoupon?code=" + row.code;
+        row.url = "http://localhost:5000/api/v3/changePlanWithCoupon?code=" + row.code;
         res.status(200).json(row);
       }).catch(function(err) {
         fail(res, 500, "polis_err_creating_coupon", err);
@@ -7397,11 +7401,11 @@ Email verified! You can close this tab or hit the back button.
   }
 
   function createProdModerationUrl(zinvite) {
-    return "https://pol.is/m/" + zinvite;
+    return "http://localhost:5000/m/" + zinvite;
   }
 
   function createModerationUrl(req, zinvite) {
-    let server = devMode ? "http://localhost:5000" : "https://pol.is";
+    let server = devMode ? "http://localhost:5000" : "http://localhost:5000";
 
     if (req.headers.host.includes("preprod.pol.is")) {
       server = "https://preprod.pol.is";
@@ -7411,7 +7415,7 @@ Email verified! You can close this tab or hit the back button.
   }
 
   // function createMuteUrl(zid, tid) {
-  //     let server = devMode ? "http://localhost:5000" : "https://pol.is";
+  //     let server = devMode ? "http://localhost:5000" : "http://localhost:5000";
   //     let params = {
   //         zid: zid,
   //         tid: tid
@@ -7422,7 +7426,7 @@ Email verified! You can close this tab or hit the back button.
   // }
 
   // function createUnmuteUrl(zid, tid) {
-  //     let server = devMode ? "http://localhost:5000" : "https://pol.is";
+  //     let server = devMode ? "http://localhost:5000" : "http://localhost:5000";
   //     let params = {
   //         zid: zid,
   //         tid: tid
@@ -7694,7 +7698,7 @@ Email verified! You can close this tab or hit the back button.
       let isSpamPromise = isSpam({
         comment_content: txt,
         comment_author: uid,
-        permalink: 'https://pol.is/' + zid,
+        permalink: 'http://localhost:5000/' + zid,
         user_ip: ip,
         user_agent: req.headers['user-agent'],
         referrer: req.headers.referer,
@@ -8121,6 +8125,8 @@ Email verified! You can close this tab or hit the back button.
 
 
   function handle_GET_participationInit(req, res) {
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+    console.log("HANDLE_GETPARTICIPATIONINIT");
 
     // let qs = {
     //   conversation_id: req.p.conversation_id,
@@ -8228,6 +8234,8 @@ Email verified! You can close this tab or hit the back button.
         o.nextComment.currentPid = req.p.pid;
       }
 
+      console.log("querry doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeEEE");
+      console.log(o);
       res.status(200).json(o);
 
     }, function(err) {
@@ -9481,11 +9489,13 @@ Email verified! You can close this tab or hit the back button.
   }
 
   function getOneConversation(zid, uid) {
+    console.log("query ============");
     return Promise.all([
       pgQueryP_readOnly("select * from conversations left join  (select uid, site_id, plan from users) as u on conversations.owner = u.uid where conversations.zid = ($1);", [zid]),
       getConversationHasMetadata(zid),
       (_.isUndefined(uid) ? Promise.resolve({}) : getUserInfoForUid2(uid)),
     ]).then(function(results) {
+      console.log(results);
       let conv = results[0] && results[0][0];
       let convHasMetadata = results[1];
       let requestingUserInfo = results[2];
@@ -9864,7 +9874,7 @@ Email verified! You can close this tab or hit the back button.
     if (req.p.plan_id) {
       o.plan_id = req.p.plan_id;
     }
-    res.send("https://pol.is/settings/enterprise/" + encodeParams(o));
+    res.send("http://localhost:5000/settings/enterprise/" + encodeParams(o));
   }
 
 
@@ -11344,7 +11354,7 @@ Thanks for using pol.is!
       return Promise.resolve(cached);
     }
     let httpUrl = "https://cdn.api.twitter.com/1/urls/count.json?url=http://pol.is/" + conversation_id;
-    let httpsUrl = "https://cdn.api.twitter.com/1/urls/count.json?url=https://pol.is/" + conversation_id;
+    let httpsUrl = "https://cdn.api.twitter.com/1/urls/count.json?url=http://localhost:5000/" + conversation_id;
     return Promise.all([
       request.get(httpUrl),
       request.get(httpsUrl),
@@ -11372,7 +11382,7 @@ Thanks for using pol.is!
     if (cached) {
       return Promise.resolve(cached);
     }
-    let url = "http://graph.facebook.com/\?id\=https://pol.is/" + conversation_id;
+    let url = "http://graph.facebook.com/\?id\=http://localhost:5000/" + conversation_id;
     return request.get(url).then(function(result) {
       let shares = JSON.parse(result).shares;
       fbShareCountCache.set(conversation_id, shares);
@@ -12327,7 +12337,7 @@ CREATE TABLE slack_user_invites (
     // TODO If we're doing this basic form, we can't just return json from the /login call
 
     let form1 = '' +
-      '<h2>create a new <img src="https://pol.is/polis-favicon_favicon.png" height="20px"> pol<span class="Logo--blue">.</span>is account</h2>' +
+      '<h2>create a new <img src="http://localhost:5000/polis-favicon_favicon.png" height="20px"> pol<span class="Logo--blue">.</span>is account</h2>' +
       '<p><form role="form" class="FormVertical" action="' + getServerNameWithProtocol(req) + '/api/v3/auth/new" method="POST">' +
       '<div class="FormVertical-group">' +
       '<label class="FormLabel" for="gatekeeperLoginEmail">Email</label>' +
@@ -12352,7 +12362,7 @@ CREATE TABLE slack_user_invites (
       '<input type="hidden" name="tool_consumer_instance_guid" value="' + tool_consumer_instance_guid + '">' +
       '<input type="hidden" name="afterJoinRedirectUrl" value="' + afterJoinRedirectUrl + '">' +
       '</div>' +
-      '<input type="checkbox" name="gatekeeperTosPrivacy" id="gatekeeperTosPrivacy" style="position: relative; top: -1px"> &nbsp; By signing up, you agree to our <a href="https://pol.is/tos"> terms of use</a> and <a href="https://pol.is/privacy"> privacy policy </a>' +
+      '<input type="checkbox" name="gatekeeperTosPrivacy" id="gatekeeperTosPrivacy" style="position: relative; top: -1px"> &nbsp; By signing up, you agree to our <a href="http://localhost:5000/tos"> terms of use</a> and <a href="http://localhost:5000/privacy"> privacy policy </a>' +
       '<div class="row" id="errorDiv"></div>' +
       '<div class="FormVertical-group">' +
       '<button type="submit" class="Btn Btn-primary">Create new pol.is account</button>' +
@@ -12948,7 +12958,7 @@ CREATE TABLE slack_user_invites (
     } else {
       path += "app_instructions_blank.png";
     }
-    let doFetch = makeFileFetcher(hostname, portForParticipationFiles, path, {
+    let doFetch = makeFileFetcher("polis-admin", portForParticipationFiles, path, {
       'Content-Type': "image/png",
     });
     doFetch(req, res);
@@ -13392,6 +13402,7 @@ CREATE TABLE slack_user_invites (
       if (host.match(re)) {
         // don't alert for this, it's probably DNS related
         // TODO_SEO what should we return?
+        console.log("WROOOOONG BUM!")
         userFail(res, 500, "polis_err_proxy_serving_to_domain", new Error(host));
       } else {
         fail(res, 500, "polis_err_proxy_serving_to_domain", new Error(host));
@@ -13426,6 +13437,8 @@ CREATE TABLE slack_user_invites (
   }
 
   function buildStaticHostname(req, res) {
+
+    return process.env.STATIC_FILES_HOST;
     if (devMode) {
       return process.env.STATIC_FILES_HOST;
     } else {
@@ -13458,9 +13471,14 @@ CREATE TABLE slack_user_invites (
 
 
   function makeFileFetcher(hostname, port, path, headers, preloadData) {
-
+    console.log("HOSTNAME ==> ", hostname);
+    console.log("PORT ==> ", port);
+    console.log("PATH ==> ", path);
+    console.log("===============\n\n");
+    if(!hostname) {
+      hostname = buildStaticHostname(req, res);
+    }
     return function(req, res) {
-      let hostname = buildStaticHostname(req, res);
       if (!hostname) {
         fail(res, 500, "polis_err_file_fetcher_serving_to_domain");
         console.error(req.headers.host);
@@ -13583,7 +13601,7 @@ CREATE TABLE slack_user_invites (
   }
 
 
-  let fetch404Page = makeFileFetcher(hostname, portForAdminFiles, "/404.html", {
+  let fetch404Page = makeFileFetcher("polis-admin", portForAdminFiles, "/404.html", {
     'Content-Type': "text/html",
   });
 
@@ -13622,10 +13640,10 @@ CREATE TABLE slack_user_invites (
   }
 
 
-  let fetchIndexForAdminPage = makeFileFetcher(hostname, portForAdminFiles, "/index_admin.html", {
+  let fetchIndexForAdminPage = makeFileFetcher("polis-admin", portForAdminFiles, "/index_admin.html", {
     'Content-Type': "text/html",
   });
-  let fetchIndexForReportPage = makeFileFetcher(hostname, portForAdminFiles, "/index_report.html", {
+  let fetchIndexForReportPage = makeFileFetcher("polis-admin", portForAdminFiles, "/index_report.html", {
     'Content-Type': "text/html",
   });
 
@@ -13636,7 +13654,7 @@ CREATE TABLE slack_user_invites (
     res.set({
       'Content-Type': 'text/html',
     });
-    res.send("<a href='https://pol.is/" + conversation_id + "' target='_blank'>" + conversation_id + "</a>");
+    res.send("<a href='http://localhost:5000/" + conversation_id + "' target='_blank'>" + conversation_id + "</a>");
   }
 
 
@@ -13648,8 +13666,8 @@ CREATE TABLE slack_user_invites (
         'Content-Type': 'text/html',
       });
       let title = info.topic || info.created;
-      res.send("<a href='https://pol.is/" + conversation_id + "' target='_blank'>" + title + "</a>" +
-        "<p><a href='https://pol.is/m" + conversation_id + "' target='_blank'>moderate</a></p>" +
+      res.send("<a href='http://localhost:5000/" + conversation_id + "' target='_blank'>" + title + "</a>" +
+        "<p><a href='http://localhost:5000/m" + conversation_id + "' target='_blank'>moderate</a></p>" +
         (info.description ? "<p>" + info.description + "</p>" : "")
       );
     }).catch(function(err) {

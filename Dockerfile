@@ -1,4 +1,5 @@
-FROM node:6.9.1
+FFROM node:6.9.1
+
 EXPOSE 5000
 
 # Create app directory
@@ -7,5 +8,6 @@ WORKDIR /code
 
 RUN npm install
 
+#CMD ["sleep", "infinity"]
 CMD ["npm", "start"]
 

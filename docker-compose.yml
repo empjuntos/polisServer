@@ -18,10 +18,10 @@ services:
     build: .
     volumes:
       - .:/code
-    depends_on:
-      - postgres
     ports:
       - 5000:5000
+    depends_on:
+      - postgres
     environment:
       - POSTGRES_USER=polis
       - POSTGRES_PASSWORD=polis
