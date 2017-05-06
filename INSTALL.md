@@ -51,3 +51,8 @@ Run polisServer:
 
     $ . .env_dev
     $ nodejs --max_old_space_size=400 --gc_interval=100 --harmony app.js
+
+Docker up server,
+Docker up admin -> node dev-server.js
+Docker up participation -> gulp default
+Docker up math -> apt install mongodb -> lein repl -> (run! system/poller-system)

@@ -2147,7 +2147,7 @@ function initializePolisHelpers() {
     });
 
 
-    
+
 
     if (!domainOverride && !hasWhitelistMatches(host) && !routeIsWhitelistedForAnyDomain) {
       winston.log("info", 'not whitelisted');
@@ -2296,7 +2296,7 @@ function initializePolisHelpers() {
 
       let results = rows.map((row) => {
         let item = row.data;
-        
+
         if (row.math_tick) {
           item.math_tick = Number(row.math_tick);
         }
@@ -2371,8 +2371,8 @@ function initializePolisHelpers() {
     return o;
   }
 
-  function packGids(o) {  
-    
+  function packGids(o) {
+
     // TODO start index at 1
 
     function remapGid(g) {
@@ -2499,10 +2499,12 @@ function initializePolisHelpers() {
   }
 
   function getPca(zid, math_tick) {
+    console.log("GETTING PCAaaaa");
     let cached = pcaCache.get(zid);
     if (cached && cached.expiration < Date.now()) {
       cached = null;
     }
+    cached = null;
     let cachedPOJO = cached && cached.asPOJO;
     if (cachedPOJO) {
       if (cachedPOJO.math_tick <= math_tick) {
@@ -2521,7 +2523,7 @@ function initializePolisHelpers() {
     // It's probably not difficult to cache, but keeping things simple for now, and only caching things that come down with the poll.
 
     let queryStart = Date.now();
-
+console.log("MATH ENV = ", process.env.MATH_ENV);
     return pgQueryP_readOnly("select * from math_main where zid = ($1) and math_env = ($2);", [zid, process.env.MATH_ENV]).then((rows) => {
 
       let queryEnd = Date.now();
@@ -2529,7 +2531,7 @@ function initializePolisHelpers() {
       addInRamMetric("pcaGetQuery", queryDuration);
 
       if (!rows || !rows.length) {
-        INFO("mathpoll related", "after cache miss, unable to find item", zid, math_tick);
+        INFO("mathpoll related", "after cache miss, unable to find item :( cry", zid, math_tick);
         return null;
       }
       let item = rows[0].data;
@@ -2618,7 +2620,10 @@ function initializePolisHelpers() {
       }
     }
 
+console.log("I WILL GET THIS PCA");
     getPca(zid, math_tick).then(function(data) {
+      console.log("LOOK MY DATA !!!!!!!!!!!!!!!!!!!");
+      console.log(data);
       if (data) {
         // The buffer is gzipped beforehand to cut down on server effort in re-gzipping the same json string for each response.
         // We can't cache this endpoint on Cloudflare because the response changes too freqently, so it seems like the best way
@@ -6809,13 +6814,13 @@ Email verified! You can close this tab or hit the back button.
 
   function _getCommentsForModerationList(o) {
     var strictCheck = Promise.resolve(null);
-    
+
     if (o.modIn) {
       strictCheck = pgQueryP("select strict_moderation from conversations where zid = ($1);", [o.zid]).then((c) => {
         return o.strict_moderation;
       });
     }
-    
+
     return strictCheck.then((strict_moderation) => {
 
       let modClause = "";
@@ -7139,7 +7144,7 @@ Email verified! You can close this tab or hit the back button.
     });
   }
 
-  
+
   function getAgeRange(demo) {
     var currentYear = (new Date()).getUTCFullYear();
     var birthYear = demo.ms_birth_year_estimate_fb;
@@ -7176,7 +7181,7 @@ Email verified! You can close this tab or hit the back button.
   }
 
 
-  
+
 
   function getDemographicsForVotersOnComments(zid, comments) {
     function isAgree(v) {
@@ -7216,7 +7221,7 @@ Email verified! You can close this tab or hit the back button.
         };
       });
       var demoByPid = _.indexBy(demo, "pid");
-      
+
       votes = votes.map((v) => {
         return _.extend(v, demoByPid[v.pid]);
       });
@@ -7314,13 +7319,13 @@ Email verified! You can close this tab or hit the back button.
       if (req.p.include_demographics) {
         isModerator(req.p.zid, req.p.uid).then((owner) => {
           if (owner) {
-            return getDemographicsForVotersOnComments(req.p.zid, comments).then((commentsWithDemographics) => {              
+            return getDemographicsForVotersOnComments(req.p.zid, comments).then((commentsWithDemographics) => {
               finishArray(res, commentsWithDemographics);
             }).catch((err) => {
               fail(res, 500, "polis_err_get_comments3", err);
             });
           } else {
-            fail(res, 500, "polis_err_get_comments_permissions");            
+            fail(res, 500, "polis_err_get_comments_permissions");
           }
         }).catch((err) => {
           fail(res, 500, "polis_err_get_comments2", err);
@@ -7863,7 +7868,7 @@ Email verified! You can close this tab or hit the back button.
                   });
                 });
               } else {
-                sendCommentModerationEmail(req, 125, zid, "?"); // email mike for all comments, since some people may not have turned on strict moderation, and we may want to babysit evaluation conversations of important customers.              
+                sendCommentModerationEmail(req, 125, zid, "?"); // email mike for all comments, since some people may not have turned on strict moderation, and we may want to babysit evaluation conversations of important customers.
                 sendSlackEvent({
                   type: "comment_mod_needed",
                   data: comment,
@@ -8235,7 +8240,7 @@ Email verified! You can close this tab or hit the back button.
       }
 
       console.log("querry doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeEEE");
-      console.log(o);
+      //console.log(o);
       res.status(200).json(o);
 
     }, function(err) {
@@ -9720,7 +9725,7 @@ Email verified! You can close this tab or hit the back button.
   function handle_POST_reports(req, res) {
     let zid = req.p.zid;
     let uid = req.p.uid;
-    
+
     return isModerator(zid, uid).then((isMod) => {
       if (!isMod) {
         return fail(res, 403, "polis_err_post_reports_permissions", err);
@@ -9775,7 +9780,7 @@ Email verified! You can close this tab or hit the back button.
 
       let query  = q.toString();
       query = query.replace("'now_as_millis()'", "now_as_millis()"); // remove quotes added by sql lib
-      
+
       return pgQueryP(query, []).then((result) => {
         res.json({});
       });
@@ -10177,7 +10182,7 @@ Email verified! You can close this tab or hit the back button.
 
   function handle_POST_sendEmailExportReady(req, res) {
 
-    if (req.p.webserver_pass !== process.env.WEBSERVER_PASS || req.p.webserver_username !== process.env.WEBSERVER_USERNAME) {      
+    if (req.p.webserver_pass !== process.env.WEBSERVER_PASS || req.p.webserver_username !== process.env.WEBSERVER_USERNAME) {
       return fail(res, 403, "polis_err_sending_export_link_to_email_auth");
     }
 
@@ -11460,7 +11465,7 @@ Thanks for using pol.is!
           break;
         }
       }
-      
+
 
       meta = _.indexBy(meta, 'pid');
       let pidToMetaVotes = _.groupBy(metaVotes, 'pid');
@@ -11800,7 +11805,7 @@ Thanks for using pol.is!
         //         return stuff;
         //     }
         // }).then(function(stuff) {
-          
+
         let participantsWithSocialInfo = stuff[0] || [];
         // let facebookFriends = stuff[0] || [];
         // let twitterParticipants = stuff[1] || [];
@@ -12044,7 +12049,7 @@ CREATE TABLE slack_user_invites (
         slack_team,
         slack_user_id,
       ]).then((rows) => {
-        
+
         if (!rows || !rows.length) {
           // create new user (or use existing user) and associate a new slack_user entry
           const uidPromise = existing_uid_for_client ? Promise.resolve(existing_uid_for_client) : createDummyUser();
@@ -13552,7 +13557,9 @@ CREATE TABLE slack_user_invites (
 
   // serve up index.html in response to anything starting with a number
   let hostname = process.env.STATIC_FILES_HOST;
+  //let hostname = "pol.is";
   let portForParticipationFiles = process.env.STATIC_FILES_PORT;
+  //let portForParticipationFiles = 80;
   let portForAdminFiles = process.env.STATIC_FILES_ADMINDASH_PORT;
 
 
