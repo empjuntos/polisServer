@@ -1,4 +1,4 @@
-FFROM node:6.9.1
+FROM node:6.9.1
 
 EXPOSE 5000
 
