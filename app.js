@@ -1393,10 +1393,10 @@ helpersInitialized.then(function(o) {
   app.get(/^\/conversations(\/.*)?/, fetchIndexForAdminPage);
   app.get(/^\/signout(\/.*)?/, fetchIndexForAdminPage);
   app.get(/^\/signin(\/.*)?/, fetchIndexForAdminPage);
-  app.get(/^\/dist\/admin_bundle.js$/, makeFileFetcher(hostname, portForAdminFiles, "/dist/admin_bundle.js", {
+  app.get(/^\/dist\/admin_bundle.js$/, makeFileFetcher("polis-client-admin", portForAdminFiles, "/dist/admin_bundle.js", {
     'Content-Type': "application/javascript",
   }));
-  app.get(/^\/__webpack_hmr$/, makeFileFetcher(hostname, portForAdminFiles, "/__webpack_hmr", {
+  app.get(/^\/__webpack_hmr$/, makeFileFetcher("polis-client-admin", portForAdminFiles, "/__webpack_hmr", {
     'Content-Type': "eventsource",
   }));
   app.get(/^\/privacy$/, fetchIndexForAdminPage);
@@ -1425,7 +1425,7 @@ helpersInitialized.then(function(o) {
 
   app.get(/^\/report\/r?[0-9][0-9A-Za-z]+(\/.*)?/, fetchIndexForReportPage);
   
-  app.get(/^\/embed$/, makeFileFetcher(hostname, portForAdminFiles, "/embed.html", {
+  app.get(/^\/embed$/, makeFileFetcher("polis-client-admin", portForAdminFiles, "/embed.html", {
     'Content-Type': "text/html",
   }));
   app.get(/^\/embedPreprod$/, makeFileFetcher(hostname, portForAdminFiles, "/embedPreprod.html", {

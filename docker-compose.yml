@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  polis-postgres:
+    container_name: polis-postgres
+    image: "postgres:9.6"
+    ports:
+      - 5431:5432
+    build:
+      dockerfile: Dockerfile.postgres
+    env_file:
+      - env/postgres.env
+
+  polis-server:
+    container_name: polis-server
+    build: .
+    volumes:
+      - .:/polisServer
+    ports:
+      - 5000:5000
+    depends_on:
+      - polis-postgres
+    external_links:
+      - polisserver_default
+    env_file:
+      - env/postgres.env
+      - env/docker.env
+    networks:
+      - default
+      - polisserver_default
+
+networks:
+  polisserver_default:
+    external: true
