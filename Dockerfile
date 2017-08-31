@@ -7,4 +7,4 @@ WORKDIR /polisServer
 
 RUN npm install
 
-CMD npm start; sleep infinity
+CMD node app.js; sleep infinity

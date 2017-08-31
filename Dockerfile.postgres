@@ -1,0 +1,6 @@
+FROM postgres:9.5
+
+EXPOSE 5432
+
+ADD . /polisServer
+ADD postgres/initialize.sh /docker-entrypoint-initdb.d/init-user-db.sh
