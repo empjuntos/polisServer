@@ -13256,7 +13256,7 @@ CREATE TABLE slack_user_invites (
     } else {
       path += "app_instructions_blank.png";
     }
-    let doFetch = makeFileFetcher("polis-admin", portForParticipationFiles, path, {
+    let doFetch = makeFileFetcher("polis-client-admin", portForParticipationFiles, path, {
       'Content-Type': "image/png",
     });
     doFetch(req, res);
@@ -13917,7 +13917,7 @@ CREATE TABLE slack_user_invites (
   }
 
 
-  let fetch404Page = makeFileFetcher("polis-admin", portForAdminFiles, "/404.html", {
+  let fetch404Page = makeFileFetcher("polis-client-admin", portForAdminFiles, "/404.html", {
     'Content-Type': "text/html",
   });
 
@@ -13956,10 +13956,10 @@ CREATE TABLE slack_user_invites (
   }
 
 
-  let fetchIndexForAdminPage = makeFileFetcher("polis-admin", portForAdminFiles, "/index_admin.html", {
+  let fetchIndexForAdminPage = makeFileFetcher("polis-client-admin", portForAdminFiles, "/index_admin.html", {
     'Content-Type': "text/html",
   });
-  let fetchIndexForReportPage = makeFileFetcher("polis-admin", portForAdminFiles, "/index_report.html", {
+  let fetchIndexForReportPage = makeFileFetcher("polis-client-admin", portForAdminFiles, "/index_report.html", {
     'Content-Type': "text/html",
   });
 
