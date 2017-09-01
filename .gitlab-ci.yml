@@ -1,0 +1,30 @@
+---
+image: docker:17.04-git
+services:
+- docker:17.04-dind
+stages:
+- build
+
+variables:
+  NODE_RELEASE_IMAGE: $CI_REGISTRY_IMAGE/node:$CI_BUILD_REF_NAME
+  POSTGRES_RELEASE_IMAGE: $CI_REGISTRY_IMAGE/postgres:$CI_BUILD_REF_NAME
+
+before_script:
+  - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
+
+build to production:
+  stage: build
+  script:
+    - docker build -t $NODE_RELEASE_IMAGE .
+    - docker tag $NODE_RELEASE_IMAGE "$CI_REGISTRY_IMAGE/node:latest"
+    - docker push $NODE_RELEASE_IMAGE
+    - docker push "$CI_REGISTRY_IMAGE/node:latest"
+    - docker build -f Dockerfile.postgres -t $POSTGRES_RELEASE_IMAGE .
+    - docker tag $POSTGRES_RELEASE_IMAGE "$CI_REGISTRY_IMAGE/node:latest"
+    - docker push $POSTGRES_RELEASE_IMAGE
+    - docker push "$CI_REGISTRY_IMAGE/postgres:latest"
+  only:
+    - /master/
+  environment: production
+  tags:
+    - docker
