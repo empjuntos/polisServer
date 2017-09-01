@@ -20,7 +20,7 @@ build to production:
     - docker push $NODE_RELEASE_IMAGE
     - docker push "$CI_REGISTRY_IMAGE/node:latest"
     - docker build -f Dockerfile.postgres -t $POSTGRES_RELEASE_IMAGE .
-    - docker tag $POSTGRES_RELEASE_IMAGE "$CI_REGISTRY_IMAGE/node:latest"
+    - docker tag $POSTGRES_RELEASE_IMAGE "$CI_REGISTRY_IMAGE/postgres:latest"
     - docker push $POSTGRES_RELEASE_IMAGE
     - docker push "$CI_REGISTRY_IMAGE/postgres:latest"
   only:
