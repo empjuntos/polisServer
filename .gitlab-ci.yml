@@ -1,9 +1,10 @@
 ---
-image: docker:17.04-git
+image: docker:latest
 services:
-- docker:17.04-dind
+- docker:dind
 stages:
 - build
+- deploy
 
 variables:
   NODE_RELEASE_IMAGE: $CI_REGISTRY_IMAGE/node:$CI_BUILD_REF_NAME
@@ -24,7 +25,29 @@ build to production:
     - docker push $POSTGRES_RELEASE_IMAGE
     - docker push "$CI_REGISTRY_IMAGE/postgres:latest"
   only:
+    - /master|develop/
+  environment: production
+  tags:
+    - docker
+
+deploy to production:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment Production --stack polis-prod --service polis-server --new-image $RELEASE_IMAGE --no-finish-upgrade
+  only:
     - /master/
   environment: production
+  tags:
+    - docker
+
+deploy to development:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment Production --stack polis-dev --service polis-server --new-image $RELEASE_IMAGE --no-finish-upgrade
+  only:
+    - /develop/
+  environment: development
   tags:
     - docker
