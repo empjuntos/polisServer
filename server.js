@@ -2741,14 +2741,13 @@ console.log("MATH ENV = ", process.env.MATH_ENV);
 
       if (!rows || !rows.length) {
         INFO("mathpoll related", "after cache miss, unable to find item :( cry", zid, math_tick);
-        //return null;
+        return null;
       }
-      //let item = rows[0].data;
-      let item = oi;
+      let item = rows[0].data;
 
-     // if (rows[0].math_tick) {
-     //   item.math_tick = Number(rows[0].math_tick);
-     // }
+      if (rows[0].math_tick) {
+        item.math_tick = Number(rows[0].math_tick);
+      }
 
       if (item.math_tick <= math_tick) {
         INFO("mathpoll related", "after cache miss, unable to find newer item", zid, math_tick);
@@ -5272,6 +5271,7 @@ Email verified! You can close this tab or hit the back button.
             };
             addCookies(req, res, token, uid).then(function() {
               winston.log("info", "uid", uid);
+              winston.log("info", "token", token);
               winston.log("info", "lti_user_id", lti_user_id);
               winston.log("info", "lti_context_id", lti_context_id);
               let ltiUserPromise = lti_user_id ?
@@ -6462,6 +6462,8 @@ Email verified! You can close this tab or hit the back button.
     let tool_consumer_instance_guid = req.p.tool_consumer_instance_guid;
     let afterJoinRedirectUrl = req.p.afterJoinRedirectUrl;
 
+
+
     let site_id = void 0;
     if (req.p.encodedParams) {
       let decodedParams = decodeParams(req.p.encodedParams);
@@ -6576,7 +6578,7 @@ Email verified! You can close this tab or hit the back button.
                       uid: uid,
                       hname: hname,
                       email: email,
-                      // token: token
+                     // token: token
                     });
                   }
                 }).catch(function(err) {
