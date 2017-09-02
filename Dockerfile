@@ -12,4 +12,4 @@ WORKDIR /polisServer
 
 RUN npm install
 
-CMD node app.js
+CMD ./start.sh

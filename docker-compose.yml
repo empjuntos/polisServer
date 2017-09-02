@@ -28,3 +28,4 @@ services:
     env_file:
       - env/postgres.env
       - env/docker.env
+    command: /polisServer/start-dev.sh
