@@ -11668,6 +11668,8 @@ Thanks for using pol.is!
       let count = httpCount + httpsCount;
       twitterShareCountCache.set(conversation_id, count);
       return count;
+    }).catch(function(error) {
+      console.log('Error getting Twitter info: ' + error);
     });
   }
 
