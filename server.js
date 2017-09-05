@@ -6990,7 +6990,7 @@ Email verified! You can close this tab or hit the back button.
 
 
     getUserInfoForUid2(uid).then((user) => {
-      
+
       emailBadProblemTime("User cancelled subscription: " + user.email);
 
       return pgQueryP("select * from stripe_subscriptions where uid = ($1);", [uid]).then((rows) => {
@@ -7569,7 +7569,7 @@ Email verified! You can close this tab or hit the back button.
       if (req.p.include_demographics) {
         isModerator(req.p.zid, req.p.uid).then((owner) => {
           if (owner || isReportQuery) {
-            return getDemographicsForVotersOnComments(req.p.zid, comments).then((commentsWithDemographics) => {              
+            return getDemographicsForVotersOnComments(req.p.zid, comments).then((commentsWithDemographics) => {
               finishArray(res, commentsWithDemographics);
             }).catch((err) => {
               fail(res, 500, "polis_err_get_comments3", err);
@@ -7812,7 +7812,7 @@ Email verified! You can close this tab or hit the back button.
       });
     });
   }
-  
+
   function getConversationInfoByConversationId(conversation_id) {
     return new MPromise("getConversationInfoByConversationId", function(resolve, reject) {
       pgQuery("SELECT * FROM conversations WHERE zid = (select zid from zinvites where zinvite = ($1));", [conversation_id], function(err, result) {
@@ -8136,7 +8136,7 @@ Email verified! You can close this tab or hit the back button.
                 });
               } else {
                 addNotificationTask(zid);
-                sendCommentModerationEmail(req, 125, zid, "?"); // email mike for all comments, since some people may not have turned on strict moderation, and we may want to babysit evaluation conversations of important customers.              
+                sendCommentModerationEmail(req, 125, zid, "?"); // email mike for all comments, since some people may not have turned on strict moderation, and we may want to babysit evaluation conversations of important customers.
                 sendSlackEvent({
                   type: "comment_mod_needed",
                   data: comment,
