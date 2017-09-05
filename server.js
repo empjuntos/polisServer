@@ -32,10 +32,9 @@ const Mailgun = require('mailgun').Mailgun;
 const mailgun = new Mailgun(process.env.MAILGUN_API_KEY);
 // const postmark = require("postmark")(process.env.POSTMARK_API_KEY);
 const querystring = require('querystring');
-//const devMode = "localhost" === process.env.STATIC_FILES_HOST;
-console.log("====================================")
-console.log(process.env.STATIC_FILES_HOST);
-const devMode = true;
+const devMode = process.env.DEV_MODE;
+const debug = process.env.DEBUG;
+const polisProd = process.env.POLIS_PROD;
 const replaceStream = require('replacestream');
 const responseTime = require('response-time');
 const request = require('request-promise'); // includes Request, but adds promise methods
@@ -69,7 +68,7 @@ const winston = console;
 
 
 
-if (devMode) {
+if (debug) {
   Promise.longStackTraces();
 }
 
@@ -268,8 +267,9 @@ function isSpam(o) {
   });
 }
 
+// FIXME Use INFO log level without debug, make debug logs in DEBUG level.
 var INFO;
-if (devMode) {
+if (debug) {
   INFO = console.log;
 
   // INFO = function() {
@@ -3264,7 +3264,7 @@ console.log("MATH ENV = ", process.env.MATH_ENV);
 
   function getServerNameWithProtocol(req) {
     let server = "http://localhost:5000";
-    if (devMode) {
+    if (!polisProd && !devMode) {
       // usually localhost:5000
       server = "http://" + req.headers.host;
     }
@@ -7660,7 +7660,7 @@ Email verified! You can close this tab or hit the back button.
   }
 
   function createModerationUrl(req, zinvite) {
-    let server = devMode ? "http://localhost:5000" : "http://localhost:5000";
+    let server = devMode ? "http://localhost:5000" : "https://" + process.env.PRIMARY_POLIS_URL;
 
     if (req.headers.host.includes("preprod.pol.is")) {
       server = "https://preprod.pol.is";
@@ -13755,6 +13755,7 @@ CREATE TABLE slack_user_invites (
   function buildStaticHostname(req, res) {
 
     return process.env.STATIC_FILES_HOST;
+    // FIXME DELME unreachable code form here
     if (devMode) {
       return process.env.STATIC_FILES_HOST;
     } else {
@@ -13804,6 +13805,11 @@ CREATE TABLE slack_user_invites (
       let url;
       if (devMode) {
         url = "http://" + hostname + ":" + port + path;
+      } else if (!polisProd) {
+        url = "https://" + hostname;
+        if (port !== '' || port !== undefined)
+          url = url + ':' + port;
+        url =  url + path;
       } else {
         // pol.is.s3-website-us-east-1.amazonaws.com
         // preprod.pol.is.s3-website-us-east-1.amazonaws.com
@@ -14156,6 +14162,8 @@ CREATE TABLE slack_user_invites (
     COOKIES,
     denyIfNotFromWhitelistedDomain,
     devMode,
+    debug,
+    polisProd,
     emailTeam,
     enableAgid,
     fail,
