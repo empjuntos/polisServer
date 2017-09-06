@@ -2732,15 +2732,13 @@ function initializePolisHelpers() {
     // It's probably not difficult to cache, but keeping things simple for now, and only caching things that come down with the poll.
 
     let queryStart = Date.now();
-console.log("MATH ENV = ", process.env.MATH_ENV);
     return pgQueryP_readOnly("select * from math_main where zid = ($1) and math_env = ($2);", [zid, process.env.MATH_ENV]).then((rows) => {
-
       let queryEnd = Date.now();
       let queryDuration = queryEnd - queryStart;
       addInRamMetric("pcaGetQuery", queryDuration);
 
       if (!rows || !rows.length) {
-        INFO("mathpoll related", "after cache miss, unable to find item :( cry", zid, math_tick);
+        INFO("mathpoll related", "after cache miss, unable to find item", zid, math_tick);
         return null;
       }
       let item = rows[0].data;
@@ -2751,8 +2749,9 @@ console.log("MATH ENV = ", process.env.MATH_ENV);
 
       if (item.math_tick <= math_tick) {
         INFO("mathpoll related", "after cache miss, unable to find newer item", zid, math_tick);
-        //return null;
+        return null;
       }
+
       INFO("mathpoll related", "after cache miss, found item, adding to cache", zid, math_tick);
 
       processMathObject(item);
