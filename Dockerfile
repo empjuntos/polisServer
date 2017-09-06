@@ -10,6 +10,10 @@ ENV STATIC_FILES_HOST=polis-client
 ADD . /polisServer
 WORKDIR /polisServer
 
-RUN npm install
 
-CMD ./start.sh
+# Install app dependencies
+ENV NPM_CONFIG_LOGLEVEL warn
+RUN npm install pm2 -g
+RUN npm install --production
+
+CMD [ "pm2-docker", "start", "pm2.json" ]
