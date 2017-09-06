@@ -722,6 +722,7 @@ CREATE TABLE math_main (
   modified BIGINT DEFAULT now_as_millis(),
   UNIQUE(zid, math_env)
 );
+ALTER TABLE math_main ADD COLUMN caching_tick BIGINT;
 CREATE INDEX main_main_idx ON math_main USING btree (zid);
 
 CREATE TABLE math_profile (
