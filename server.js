@@ -3263,7 +3263,6 @@ function initializePolisHelpers() {
 
   function getServerNameWithProtocol(req) {
     let server = "https://" + req.headers.host;
-
     if (devMode) {
       server = "http://localhost:5000";
     }
@@ -3277,6 +3276,9 @@ function initializePolisHelpers() {
     if (req.headers.host.includes("survey.pol.is")) {
       server = "https://survey.pol.is";
     }
+    console.log("getServerNameWithProtocol: " + server);
+    // FIXME remove this ugly fix
+    server = "https://polis.brasilqueopovoquer.org.br/";
     return server;
   }
 
