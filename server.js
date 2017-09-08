@@ -3262,10 +3262,10 @@ function initializePolisHelpers() {
 
 
   function getServerNameWithProtocol(req) {
-    let server = "http://localhost:5000";
-    if (!polisProd && !devMode) {
-      // usually localhost:5000
-      server = "http://" + req.headers.host;
+    let server = "https://" + req.headers.host;
+
+    if (devMode) {
+      server = "http://localhost:5000";
     }
 
     if (req.headers.host.includes("preprod.pol.is")) {
