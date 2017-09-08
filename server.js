@@ -3278,7 +3278,7 @@ function initializePolisHelpers() {
     }
     console.log("getServerNameWithProtocol: " + server);
     // FIXME remove this ugly fix
-    server = "https://polis.brasilqueopovoquer.org.br/";
+    server = "https://polis.brasilqueopovoquer.org.br";
     return server;
   }
 
