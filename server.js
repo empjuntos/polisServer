@@ -2142,8 +2142,7 @@ function initializePolisHelpers() {
         } else if (isOptional) {
           onDone(); // didn't create user
         } else {
-          res.status(401);
-          onDone("polis_err_auth_token_not_supplied");
+          fail(res, 401, "polis_err_auth_token_not_supplied");
         }
       });
     }
