@@ -3261,9 +3261,6 @@ function initializePolisHelpers() {
     let server = "https://" + req.headers.host;
     if (devMode) {
       server = "http://localhost:5000";
-    } else {
-      // FIXME remove this ugly fix
-      server = "https://polis.brasilqueopovoquer.org.br";
     }
 
     if (req.headers.host.includes("preprod.pol.is")) {
@@ -3276,6 +3273,8 @@ function initializePolisHelpers() {
       server = "https://survey.pol.is";
     }
     console.log("getServerNameWithProtocol: " + server);
+    // FIXME remove this ugly fix
+    server = "https://polis.brasilqueopovoquer.org.br";
     return server;
   }
 
