@@ -33,6 +33,7 @@ const mailgun = new Mailgun(process.env.MAILGUN_API_KEY);
 // const postmark = require("postmark")(process.env.POSTMARK_API_KEY);
 const querystring = require('querystring');
 const devMode = process.env.DEV_MODE;
+const pgPoolSize = process.env.PG_POOL_SIZE;
 const debug = process.env.DEBUG;
 const polisProd = process.env.POLIS_PROD;
 const replaceStream = require('replacestream');
@@ -185,11 +186,7 @@ akismet.verifyKey(function(err, verified) {
 // so we can have 25 connections per server, of of which is the preprod server
 // so we can have 1 preprod/3 prod servers, or 2 preprod / 2 prod.
 
-if (devMode) {
-  pg.defaults.poolSize = 2;
-} else {
-  pg.defaults.poolSize = 12;
-}
+pg.defaults.poolSize = pgPoolSize;
 
 // let SELF_HOSTNAME = "localhost:" + process.env.PORT;
 // if (!devMode) {
@@ -730,7 +727,7 @@ function pgQueryImpl() {
 
 
 const usingReplica = process.env.DATABASE_URL !== process.env[process.env.DATABASE_FOR_READS_NAME];
-const prodPoolSize = usingReplica ? 3 : 12; /// 39
+// const prodPoolSize = usingReplica ? 3 : 12; /// 39
 const pgPoolLevelRanks = ["info", "verbose"];
 const pgPoolLoggingLevel = -1; // -1 to get anything more important than info and verbose. // pgPoolLevelRanks.indexOf("info");
 
@@ -738,7 +735,7 @@ console.log(process.env.DATABASE_URL);
 const queryReadWriteObj = {
   isReadOnly: false,
   pgConfig: Object.assign(parsePgConnectionString(process.env.DATABASE_URL), {
-    poolSize: (devMode ? 2 : prodPoolSize),
+    poolSize: (pgPoolSize),
     // poolIdleTimeout: 30000, // max milliseconds a client can go unused before it is removed from the pool and destroyed
     // reapIntervalMillis: 1000, //frequeny to check for idle clients within the client pool
     poolLog: function(str, level) {
@@ -751,7 +748,7 @@ const queryReadWriteObj = {
 const queryReadOnlyObj = {
   isReadOnly: true,
   pgConfig: Object.assign(parsePgConnectionString(process.env[process.env.DATABASE_FOR_READS_NAME]), {
-    poolSize: (devMode ? 2 : prodPoolSize),
+    poolSize: (pgPoolSize),
     // poolIdleTimeout: 30000, // max milliseconds a client can go unused before it is removed from the pool and destroyed
     // reapIntervalMillis: 1000, //frequeny to check for idle clients within the client pool
     poolLog: function(str, level) {
