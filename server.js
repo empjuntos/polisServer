@@ -889,6 +889,13 @@ function createXidRecord(ownerUid, uid, xid, x_profile_image_url, x_name, x_emai
     ]);
 }
 
+function updateXidRecordImage(uid, x_profile_image_url){
+    return pgQueryP("update xids set x_profile_image_url = $1, where uid = $2", [
+        x_profile_image_url || null,
+        uid
+      ]);
+}
+
 
 function getXidRecordByXidOwnerId(xid, owner, x_profile_image_url, x_name, x_email, createIfMissing) {
   return pgQueryP("select * from xids where xid = ($1) and owner = ($2);", [xid, owner]).then(function(rows) {
@@ -911,7 +918,11 @@ function getXidRecordByXidOwnerId(xid, owner, x_profile_image_url, x_name, x_ema
           }];
         });
       });
-    }
+  } else if(rows && rows[0] && (rows[0].x_profile_image_url !== x_profile_image_url)){
+      console.log('updated xidRecord Image');
+      updateXidRecordImage(rows[0].uid, x_profile_image_url);
+      rows[0].x_profile_image_url = x_profile_image_url;
+  }
     return rows;
   });
 }
@@ -3274,7 +3285,7 @@ function initializePolisHelpers() {
     }
     console.log("getServerNameWithProtocol: " + server);
     // FIXME remove this ugly fix
-    server = "https://polis.brasilqueopovoquer.org.br";
+    //server = "https://polis.brasilqueopovoquer.org.br";
     return server;
   }
 
