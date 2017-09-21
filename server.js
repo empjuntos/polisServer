@@ -3271,7 +3271,7 @@ function initializePolisHelpers() {
   function getServerNameWithProtocol(req) {
     let server = "https://" + req.headers.host;
     if (devMode) {
-      server = "http://localhost:5000";
+    //   server = "http://localhost:5000";
     }
 
     if (req.headers.host.includes("preprod.pol.is")) {
