@@ -10,7 +10,7 @@ variables:
   RELEASE_IMAGE: $CI_REGISTRY_IMAGE/node:$CI_BUILD_REF_NAME
   POSTGRES_IMAGE: $CI_REGISTRY_IMAGE/postgres:$CI_BUILD_REF_NAME
 
-build to production:
+build:
   stage: build
   script:
     - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
@@ -23,7 +23,7 @@ build to production:
     - docker push $POSTGRES_IMAGE
     - docker push "$CI_REGISTRY_IMAGE/postgres:latest"
   only:
-    - /master|develop/
+    - /master/ | tags
   environment: production
   tags:
     - docker
@@ -32,20 +32,22 @@ deploy to production:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment Production --stack polis-prod --service polis-server --new-image $RELEASE_IMAGE --no-finish-upgrade --debug
+    - upgrade --environment FPAbramo --stack polis-prod --service polis-postgres --new-image $POSTGRES_IMAGE --no-finish-upgrade --debug
+    - upgrade --environment FPAbramo --stack polis-prod --service polis-server --new-image $RELEASE_IMAGE --no-finish-upgrade --debug
   only:
-    - /master/
+    - tags
   environment: production
   tags:
     - docker
 
-deploy to development:
+deploy to homolog:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment Production --stack polis-dev --service polis-server --new-image $RELEASE_IMAGE --no-finish-upgrade --debug
+    - upgrade --environment FPAbramo --stack polis-dev --service polis-postgres --new-image $POSTGRES_IMAGE --no-finish-upgrade --debug
+    - upgrade --environment FPAbramo --stack polis-dev --service polis-server --new-image $RELEASE_IMAGE --no-finish-upgrade --debug
   only:
-    - /develop/
-  environment: development
+    - /master/
+  environment: homolog
   tags:
     - docker
