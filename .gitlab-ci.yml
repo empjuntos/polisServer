@@ -23,7 +23,8 @@ build:
     - docker push $POSTGRES_IMAGE
     - docker push "$CI_REGISTRY_IMAGE/postgres:latest"
   only:
-    - /master/ | tags
+    - /master/
+    - tags
   environment: production
   tags:
     - docker
