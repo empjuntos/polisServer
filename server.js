@@ -890,7 +890,7 @@ function createXidRecord(ownerUid, uid, xid, x_profile_image_url, x_name, x_emai
 }
 
 function updateXidRecordImage(uid, x_profile_image_url){
-    return pgQueryP("update xids set x_profile_image_url = $1, where uid = $2", [
+    return pgQueryP("update xids set x_profile_image_url = $1 where uid = $2", [
         x_profile_image_url || null,
         uid
       ]);
