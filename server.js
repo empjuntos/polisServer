@@ -2338,15 +2338,17 @@ function initializePolisHelpers() {
   function addCorsHeader(req, res, next) {
 
     let host = "";
-    if (domainOverride) {
-      host = req.protocol + "://" + domainOverride;
-    } else {
-      // TODO does it make sense for this middleware to look
-      // at origin || referer? is Origin for CORS preflight?
-      // or for everything?
-      // Origin was missing from FF, so added Referer.
-      host = req.get("Origin") || req.get("Referer") || "";
-    }
+    // if (domainOverride) {
+    //   host = req.protocol + "://" + domainOverride;
+    // } else {
+    //   // TODO does it make sense for this middleware to look
+    //   // at origin || referer? is Origin for CORS preflight?
+    //   // or for everything?
+    //   // Origin was missing from FF, so added Referer.
+    //   host = req.get("Origin") || req.get("Referer") || "";
+    // }
+
+    host = req.get("Origin") || req.get("Referer") || "";
 
     // Somehow the fragment identifier is being sent by IE10????
     // Remove unexpected fragment identifier
