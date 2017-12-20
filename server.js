@@ -2369,21 +2369,27 @@ function initializePolisHelpers() {
 
 
 
-    if (!domainOverride && !hasWhitelistMatches(host) && !routeIsWhitelistedForAnyDomain) {
-      winston.log("info", 'not whitelisted');
-      // winston.log("info",req);
-      winston.log("info", req.headers);
-      winston.log("info", req.path);
-      return next("unauthorized domain: " + host);
-    }
-    if (host === "") {
-      // API
-    } else {
-      res.header("Access-Control-Allow-Origin", host);
-      res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
-      res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
-      res.header("Access-Control-Allow-Credentials", true);
-    }
+    // if (!domainOverride && !hasWhitelistMatches(host) && !routeIsWhitelistedForAnyDomain) {
+    //   winston.log("info", 'not whitelisted');
+    //   // winston.log("info",req);
+    //   winston.log("info", req.headers);
+    //   winston.log("info", req.path);
+    //   return next("unauthorized domain: " + host);
+    // }
+    // if (host === "") {
+    //   // API
+    // } else {
+    //   res.header("Access-Control-Allow-Origin", host);
+    //   res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+    //   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+    //   res.header("Access-Control-Allow-Credentials", true);
+    // }
+
+    res.header("Access-Control-Allow-Origin", host);
+    res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Credentials", true);
+
     return next();
   }
 
