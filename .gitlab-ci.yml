@@ -1,5 +1,5 @@
 ---
-image: docker:latest
+image: docker:17.04-git
 services:
 - docker:dind
 stages:
